@@ -52,4 +52,4 @@ Este proyecto fue desarrollado como Trabajo Práctico N°1 para la materia Progr
 ## Vista previa 🔍
 
 - [GitHubPages](https://justmeconrado.github.io/PySW-TP1-HTML-CSS-25/)
-- [Netlify]((https://heroic-fenglisu-1598bb.netlify.app/))
+- [Netlify](https://heroic-fenglisu-1598bb.netlify.app/)
