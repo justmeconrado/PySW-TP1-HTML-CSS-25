@@ -1,6 +1,6 @@
 # PySW-TP1-HTML-CSS-25
 Repositorio del TP Nº 1 - Diseño de PySW - 2025
-# [FitLife Gym 💪](https://github.com/justmeconrado/PySW-TP1-HTML-CSS-25)
+# [FitLife Gym 💪](https://justmeconrado.github.io/PySW-TP1-HTML-CSS-25/)
 Bienvenido al repositorio del Trabajo Práctico Nº 1 de la materia Programación y Servicios Web (PySW) de la Facultad de Ingeniería de la Universidad Nacional de Jujuy. En este proyecto, se desarrolló un sitio web completo para un gimnasio ficticio llamado "FitLife".
 
 ## Descripción del proyecto 📝
@@ -38,7 +38,7 @@ Siguiendo principios de diseño y accesibilidad web, se desarrolló una interfaz
 
 ## Autores ✒️
 
-- **Conrado Vargas** - _Desarrollo web_ - [Tu usuario de GitHub](https://github.com/justmeconrado)
+- **Conrado Vargas** - _Desarrollo web_ - [@justmeconrado](https://github.com/justmeconrado)
 
 ## Trabajo Práctico Académico
 
@@ -50,4 +50,4 @@ Este proyecto fue desarrollado como Trabajo Práctico N°1 para la materia Progr
 
 ## Vista previa 🔍
 
-El sitio web cuenta con un diseño moderno y atractivo, optimizado para diferentes dispositivos y con características interactivas que mejoran la experiencia del usuario.
+- [GitHubPages](https://justmeconrado.github.io/PySW-TP1-HTML-CSS-25/)
