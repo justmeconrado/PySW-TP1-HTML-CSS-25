@@ -1,0 +1,82 @@
+/* ==========================================================================
+   HEADER PRINCIPAL
+   ========================================================================== */
+/**
+ * Barra de navegación superior fija
+ * - Posición fija en la parte superior
+ * - Efecto de transparencia con backdrop
+ * - Diseño adaptable para móviles
+ * - Compatibilidad con modo oscuro
+ */
+.header {
+  position: fixed; // Fijo en la ventana
+  top: 0; // Pegado al borde superior
+  left: 0; // Pegado al borde izquierdo
+  width: 100%; // Ancho completo
+  z-index: $z-index-fixed; // Asegura que esté por encima de otros elementos
+  background-color: rgba(255, 255, 255, 0.95); // Blanco con 95% de opacidad
+  box-shadow: $shadow-sm; // Sombra ligera para efecto de elevación
+  @include transition(all); // Transición suave para cambios de estilo
+
+  /* ==========================================================================
+     CONTENEDOR INTERNO
+     ========================================================================== */
+  .container {
+    display: flex; // Layout flexible
+    justify-content: space-between; // Elementos a los extremos
+    align-items: center; // Centrado vertical
+    height: 80px; // Altura fija del header
+
+    // Versión para tablets
+    @include respond-to(md) {
+      height: 70px; // Altura ligeramente menor
+    }
+  }
+
+  /* ==========================================================================
+     LOGOTIPO
+     ========================================================================== */
+  /* Logo styling with icon */
+  .logo {
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      height: 40px;
+      width: auto;
+      margin-right: $spacing-sm;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover .logo-icon {
+      transform: rotate(10deg) scale(1.1);
+    }
+
+    h1 {
+      font-size: 2rem; // Using direct size instead of undefined variable
+      font-weight: $font-weight-bold;
+      color: $color-dark;
+      margin: 0;
+  
+      span {
+        color: $color-primary;
+      }
+    }
+  }
+
+  /* Dark mode adjustments */
+  .dark-mode .logo h1 {
+    color: $color-white;
+  }
+}
+
+/* ==========================================================================
+   ESTILOS PARA MODO OSCURO
+   ========================================================================== */
+.dark-mode .header {
+  background-color: rgba(18, 18, 18, 0.95); // Fondo oscuro semitransparente
+  border-bottom: 1px solid $color-gray-light; // Borde sutil inferior
+}

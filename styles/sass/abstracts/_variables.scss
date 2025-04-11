@@ -1,0 +1,89 @@
+/* ==========================================================================
+   PALETA DE COLORES
+   ========================================================================== */
+// Colores principales
+$color-primary: #d72638; // Rojo primario (acento principal)
+$color-primary-dark: #b01f2e; // Variación oscura del color primario
+$color-primary-light: #f88a94; // o el color claro que prefieras
+$color-secondary: #2e2e2e; // Color secundario (gris oscuro)
+$color-secondary-dark: #1a1a1a; // Variación oscura del secundario
+
+// Colores de acento y utilidades
+$color-accent: #ffd100; // Amarillo de acento (destacados)
+$color-light: #f5f5f5; // Fondo claro
+$color-gray: #6c757d; // Gris estándar para texto secundario
+$color-gray-light: #e9ecef; // Gris claro para bordes/fondos
+
+// Colores neutros
+$color-dark: #1a1a1a; // Color oscuro principal (textos)
+$color-white: #ffffff; // Blanco puro
+$color-black: #000000; // Negro puro
+$color-text: #eaeaea; // Color claro para texto sobre fondos oscuros
+
+$shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+/* ==========================================================================
+   SISTEMA TIPOGRÁFICO
+   ========================================================================== */
+// Familias tipográficas
+$font-family-titles: "Bebas Neue", sans-serif; // Fuente para títulos (display)
+$font-family: "Poppins", sans-serif; // Fuente principal (texto)
+
+// Tamaño base y escalado
+$font-size-base: 16px; // Tamaño base para cálculo de rem/em
+
+// Pesos de fuente
+$font-weight-light: 300; // Peso ligero
+$font-weight-normal: 400; // Peso normal (regular)
+$font-weight-medium: 500; // Peso medio
+$font-weight-bold: 700; // Peso negrita
+
+/* ==========================================================================
+   SISTEMA DE ESPACIADO (Spacing System)
+   ========================================================================== */
+// Escala basada en rem para márgenes, paddings y gaps
+$spacing-xs: 0.25rem; // 4px (base 16px) - Espaciado extra pequeño
+$spacing-sm: 0.5rem; // 8px - Espaciado pequeño
+$spacing-md: 1rem; // 16px - Espaciado medio (base)
+$spacing-lg: 1.5rem; // 24px - Espaciado grande
+$spacing-xl: 2rem; // 32px - Espaciado extra grande
+$spacing-xxl: 3rem; // 48px - Espaciado extra extra grande
+
+/* ==========================================================================
+   RADIOS DE BORDE (Border Radius)
+   ========================================================================== */
+$border-radius-sm: 0.25rem; // 4px - Bordes redondeados pequeños
+$border-radius-md: 0.5rem; // 8px - Bordes redondeados medios
+$border-radius-lg: 1rem; // 16px - Bordes muy redondeados
+
+/* ==========================================================================
+   SISTEMA DE SOMBRAS (Shadows)
+   ========================================================================== */
+$shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); // Sombra ligera
+$shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); // Sombra media
+$shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175); // Sombra pronunciada
+
+/* ==========================================================================
+   TRANSICIONES Y ANIMACIONES
+   ========================================================================== */
+$transition-fast: 0.2s ease; // Transición rápida (hover states)
+$transition-normal: 0.3s ease; // Transición estándar
+$transition-slow: 0.5s ease; // Transición lenta (efectos destacados)
+
+/* ==========================================================================
+   SISTEMA DE Z-INDEX (Capas)
+   ========================================================================== */
+$z-index-dropdown: 1000; // Menús desplegables
+$z-index-sticky: 1020; // Elementos sticky
+$z-index-fixed: 1030; // Elementos fixed (headers)
+$z-index-modal: 1040; // Modales/ventanas emergentes
+$z-index-popover: 1050; // Popovers
+$z-index-tooltip: 1060; // Tooltips (siempre encima de todo)
+
+/* ==========================================================================
+   PUNTOS DE RUPTURA (Breakpoints)
+   ========================================================================== */
+$breakpoint-sm: 576px; // Móviles grandes
+$breakpoint-md: 768px; // Tablets
+$breakpoint-lg: 992px; // Laptops pequeñas
+$breakpoint-xl: 1200px; // Escritorios grandes

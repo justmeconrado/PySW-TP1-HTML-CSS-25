@@ -1,0 +1,111 @@
+/* ==========================================================================
+   MIXIN: RESPOND-TO (MEDIA QUERIES)
+   ========================================================================== */
+/**
+ * Mixin para manejar responsive design de forma semántica
+ * @param {string} $breakpoint - Punto de ruptura (sm, md, lg, xl)
+ * @output Media query con el breakpoint correspondiente
+ * @example @include respond-to(md) { ... }
+ */
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: $breakpoint-sm) {
+      @content;
+    } // Mobile: ≤576px
+  } @else if $breakpoint == md {
+    @media (max-width: $breakpoint-md) {
+      @content;
+    } // Tablet: ≤768px
+  } @else if $breakpoint == lg {
+    @media (max-width: $breakpoint-lg) {
+      @content;
+    } // Laptop: ≤992px
+  } @else if $breakpoint == xl {
+    @media (max-width: $breakpoint-xl) {
+      @content;
+    } // Desktop: ≤1200px
+  }
+}
+
+/* ==========================================================================
+   MIXIN: FLEX (SISTEMA FLEXBOX)
+   ========================================================================== */
+/**
+ * Mixin para crear contenedores flex con configuración rápida
+ * @param {string} $direction [row] - Dirección del flex (row|column)
+ * @param {string} $justify [center] - Alineación principal (flex-start|center|flex-end|space-between...)
+ * @param {string} $align [center] - Alineación cruzada (flex-start|center|flex-end|stretch)
+ * @output Declaraciones flexbox completas
+ * @example @include flex(column, space-between, flex-start);
+ */
+@mixin flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+/* ==========================================================================
+   MIXIN: GRID (SISTEMA CSS GRID)
+   ========================================================================== */
+/**
+ * Mixin para crear grids con configuración rápida
+ * @param {string} $columns [1fr] - Estructura de columnas (ej: 1fr 1fr, repeat(3, 1fr))
+ * @param {string} $gap [$spacing-md] - Espaciado entre celdas
+ * @output Declaraciones CSS Grid completas
+ * @example @include grid(repeat(3, 1fr), $spacing-lg);
+ */
+@mixin grid($columns: 1fr, $gap: $spacing-md) {
+  display: grid;
+  grid-template-columns: $columns;
+  gap: $gap;
+}
+
+/* ==========================================================================
+   MIXIN: TRANSITION (TRANSICIONES)
+   ========================================================================== */
+/**
+ * Mixin para aplicar transiciones consistentes
+ * @param {string} $property [all] - Propiedad a animar
+ * @param {string} $duration [$transition-normal] - Duración (fast|normal|slow)
+ * @output Declaración de transition completa
+ * @example @include transition(transform, $transition-fast);
+ */
+@mixin transition($property: all, $duration: $transition-normal) {
+  transition: $property $duration;
+}
+
+/* ==========================================================================
+   MIXIN: HOVER-EFFECT (EFECTO HOVER)
+   ========================================================================== */
+/**
+ * Mixin para efecto hover estándar con elevación y sombra
+ * @output Aplica transformación y sombra al hacer hover
+ * @example @include hover-effect;
+ */
+@mixin hover-effect {
+  @include transition; // Hereda la transición base
+  &:hover {
+    transform: translateY(-3px); // Efecto de levitación
+    box-shadow: $shadow-md; // Sombra media
+  }
+}
+
+/* ==========================================================================
+   MIXIN: CLIP-PATH (FORMAS CSS)
+   ========================================================================== */
+/**
+ * Mixin para aplicar formas con clip-path
+ * @param {string} $shape - Tipo de forma (hexagon|circle|diamond)
+ * @output Declaración clip-path con la forma seleccionada
+ * @example @include clip-path(hexagon);
+ */
+@mixin clip-path($shape) {
+  @if $shape == hexagon {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  } @else if $shape == circle {
+    clip-path: circle(50% at 50% 50%);
+  } @else if $shape == diamond {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+}

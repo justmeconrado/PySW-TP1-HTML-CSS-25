@@ -1,0 +1,119 @@
+/* ==========================================================================
+   CONTENEDOR PRINCIPAL
+   ========================================================================== */
+/**
+ * Contenedor base para centrar el contenido con un ancho máximo
+ * - Ancho adaptable al 100% hasta el máximo definido
+ * - Margen automático para centrado horizontal
+ * - Padding lateral para evitar pegado a los bordes
+ */
+.container {
+  width: 100%; // Ocupa todo el ancho disponible
+  max-width: 1200px; // Ancho máximo de 1200px
+  margin: 0 auto; // Centrado horizontal automático
+  padding: 0 $spacing-md; // Padding lateral usando variable del sistema
+}
+
+/* ==========================================================================
+   GRID DE CARACTERÍSTICAS
+   ========================================================================== */
+/**
+ * Grid adaptable para sección de características
+ * - Columnas que se ajustan automáticamente
+ * - Mínimo de 250px por columna
+ * - Espaciado consistente usando variable del sistema
+ */
+.features-grid {
+  @include grid(repeat(auto-fit, minmax(250px, 1fr)), $spacing-xl);
+}
+
+/* ==========================================================================
+   GRID DE CLASES
+   ========================================================================== */
+/**
+ * Grid para mostrar tarjetas de clases/cursos
+ * - Columnas mínimas de 280px para mejor visualización
+ * - Mismo espaciado que otras grids para consistencia
+ */
+.classes-grid {
+  @include grid(repeat(auto-fit, minmax(280px, 1fr)), $spacing-xl);
+}
+
+/* ==========================================================================
+   GRID DE ENTRENADORES
+   ========================================================================== */
+/**
+ * Grid para mostrar perfiles de entrenadores
+ * - Mismo patrón que classes-grid para consistencia visual
+ * - Columnas de mínimo 280px para mejor visualización de tarjetas
+ */
+.trainers-grid {
+  @include grid(repeat(auto-fit, minmax(280px, 1fr)), $spacing-xl);
+}
+
+/* ==========================================================================
+   GRID DE ESTADÍSTICAS
+   ========================================================================== */
+/**
+ * Grid para mostrar datos estadísticos
+ * - Columnas más estrechas (200px mínimo)
+ * - Contenido centrado en cada celda
+ */
+.stats-grid {
+  @include grid(repeat(auto-fit, minmax(200px, 1fr)), $spacing-xl);
+  text-align: center; // Centrado de contenido interno
+}
+
+/* ==========================================================================
+   LAYOUT DEL BLOG (PRINCIPAL + SIDEBAR)
+   ========================================================================== */
+/**
+ * Grid de dos columnas para layout principal del blog
+ * - Relación 3:1 entre contenido principal y sidebar
+ * - Se convierte en una columna en pantallas grandes (lg)
+ */
+.blog-container {
+  @include grid(3fr 1fr, $spacing-xl); // Relación 75%/25%
+
+  // Versión para pantallas grandes (responsive)
+  @include respond-to(lg) {
+    grid-template-columns: 1fr; // Una sola columna
+  }
+}
+
+/* ==========================================================================
+   GRID DE ARTÍCULOS DEL BLOG
+   ========================================================================== */
+/**
+ * Grid para artículos dentro del área principal del blog
+ * - Columnas adaptables con mínimo 300px
+ * - Una columna en dispositivos medianos (md)
+ */
+.blog-main {
+  @include grid(repeat(auto-fill, minmax(300px, 1fr)), $spacing-xl);
+
+  // Versión para tablets
+  @include respond-to(md) {
+    grid-template-columns: 1fr; // Una sola columna
+  }
+}
+
+/* ==========================================================================
+   MASONRY DE CLASES (DISEÑO APILADO)
+   ========================================================================== */
+/**
+ * Grid estilo masonry para visualización de clases
+ * - Auto-ajuste de filas con altura dinámica
+ * - Columnas de mínimo 300px (250px en tablets)
+ */
+.classes-masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 10px; // Unidad base para cálculo de altura
+  grid-gap: $spacing-lg; // Espaciado entre elementos
+
+  // Versión para tablets
+  @include respond-to(md) {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}

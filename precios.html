@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#b01f2e" />
+    <title>Precios - FitLife</title>
+    <link rel="icon" href="assets/images/icon-fl.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="assets/images/icon-fl.svg"
+              alt="FitLife Logo"
+              class="logo-icon"
+            />
+            <h1>Fit<span>Life</span></h1>
+          </a>
+        </div>
+
+        <nav class="main-nav">
+          <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+          <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+
+          <ul class="menu">
+            <li class="menu-item"><a href="index.html">Inicio</a></li>
+            <li class="menu-item has-submenu">
+              <a href="clases.html">Clases</a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <div class="mega-menu-column">
+                    <h3>Cardio</h3>
+                    <ul>
+                      <li><a href="clases.html#spinning">Spinning</a></li>
+                      <li><a href="clases.html#zumba">Zumba</a></li>
+                      <li><a href="clases.html#hiit">HIIT</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-menu-column">
+                    <h3>Fuerza</h3>
+                    <ul>
+                      <li><a href="clases.html#crossfit">CrossFit</a></li>
+                      <li><a href="clases.html#funcional">Funcional</a></li>
+                      <li><a href="clases.html#musculacion">Musculación</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-menu-column">
+                    <h3>Mente-Cuerpo</h3>
+                    <ul>
+                      <li><a href="clases.html#yoga">Yoga</a></li>
+                      <li><a href="clases.html#pilates">Pilates</a></li>
+                      <li><a href="clases.html#meditacion">Meditación</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="menu-item">
+              <a href="entrenadores.html">Entrenadores</a>
+            </li>
+            <li class="menu-item"><a href="contacto.html">Contacto</a></li>
+            <li class="menu-item"><a href="precios.html">Precios</a></li>
+            <li class="menu-item"><a href="blog.html">Blog</a></li>
+            <li class="menu-item cta-button">
+              <a href="contacto.html">Prueba Gratis</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="theme-toggle">
+          <input
+            type="checkbox"
+            id="dark-mode-toggle"
+            class="dark-mode-toggle"
+          />
+          <label
+            for="dark-mode-toggle"
+            class="dark-mode-label"
+            aria-label="Cambiar a modo oscuro"
+          >
+            <i class="fas fa-sun sun-icon"></i>
+            <i class="fas fa-moon moon-icon"></i>
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero pricing-hero">
+      <video autoplay muted loop playsinline>
+        <source src="assets/videos/pricing-hero.mp4" type="video/mp4" />
+      </video>
+      <div class="overlay"></div>
+      <div class="hero-content container">
+        <h1 class="hero-title">NUESTROS PLANES</h1>
+        <p class="hero-subtitle">
+          Encuentra el plan perfecto para alcanzar tus objetivos
+        </p>
+      </div>
+    </section>
+
+    <section class="pricing-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Planes Flexibles</h2>
+          <p>Elige el plan que mejor se adapte a tus necesidades</p>
+        </div>
+
+        <div class="pricing-toggle">
+          <span class="toggle-label monthly active">Mensual</span>
+          <label class="toggle-switch">
+            <input type="checkbox" class="toggle-input" id="pricing-toggle" />
+            <span class="toggle-slider"></span>
+          </label>
+          <span class="toggle-label annual"
+            >Anual
+            <span
+              class="tooltip"
+              data-tooltip="Ahorra hasta un 20% con planes anuales"
+              >(-20%)</span
+            ></span
+          >
+        </div>
+
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3 class="pricing-title">Básico</h3>
+              <p class="pricing-subtitle">Ideal para principiantes</p>
+              <div class="monthly-price active">
+                <div class="pricing-price">19000</div>
+                <div class="pricing-period">por mes</div>
+              </div>
+              <div class="annual-price">
+                <div class="pricing-price">11000</div>
+                <div class="pricing-period">por mes (facturado anualmente)</div>
+              </div>
+            </div>
+            <div class="pricing-features">
+              <ul class="feature-list">
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <div class="feature-text">Acceso a sala de musculación</div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <div class="feature-text">
+                    Horario limitado (8:00 AM - 4:00 PM)
+                  </div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <div class="feature-text">4 clases grupales al mes</div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <div class="feature-text">Evaluación física inicial</div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-times"></i>
+                  </div>
+                  <div class="feature-text">Entrenamiento personalizado</div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-times"></i>
+                  </div>
+                  <div class="feature-text">Acceso a todas las sedes</div>
+                </li>
+              </ul>
+            </div>
+            <div class="pricing-cta">
+              <a href="contacto.html" class="btn btn-primary">Elegir Plan</a>
+            </div>
+          </div>
+
+          <div class="pricing-card popular">
+            <div class="popular-badge">Más Popular</div>
+            <div class="pricing-header">
+              <h3 class="pricing-title">Premium</h3>
+              <p class="pricing-subtitle">Para entusiastas del fitness</p>
+              <div class="monthly-price active">
+                <div class="pricing-price">29000</div>
+                <div class="pricing-period">por mes</div>
+              </div>
+              <div class="annual-price">
+                <div class="pricing-price">17000</div>
+                <div class="pricing-period">por mes (facturado anualmente)</div>
+              </div>
+            </div>
+            <div class="pricing-features">
+              <ul class="feature-list">
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <div class="feature-text">
+                    Acceso completo a instalaciones
+                  </div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <div class="feature-text">
+                    Horario completo (6:00 AM - 10:00 PM)
+                  </div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <div class="feature-text">Clases grupales ilimitadas</div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <div class="feature-text">Evaluación física trimestral</div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <div class="feature-text">
+                    1 sesión de entrenamiento personal al mes
+                  </div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <div class="feature-text">Acceso a todas las sedes</div>
+                </li>
+              </ul>
+            </div>
+            <div class="pricing-cta">
+              <a href="contacto.html" class="btn btn-primary">Elegir Plan</a>
+            </div>
+          </div>
+
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3 class="pricing-title">Elite</h3>
+              <p class="pricing-subtitle">Experiencia fitness completa</p>
+              <div class="monthly-price active">
+                <div class="pricing-price">39000</div>
+                <div class="pricing-period">por mes</div>
+              </div>
+              <div class="annual-price">
+                <div class="pricing-price">21000</div>
+                <div class="pricing-period">por mes (facturado anualmente)</div>
+              </div>
+            </div>
+            <div class="pricing-features">
+              <ul class="feature-list">
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <div class="feature-text">
+                    Acceso VIP a todas las instalaciones
+                  </div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <div class="feature-text">Acceso 24/7 a todas las sedes</div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <div class="feature-text">Clases grupales ilimitadas</div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <div class="feature-text">Evaluación física mensual</div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <div class="feature-text">
+                    4 sesiones de entrenamiento personal al mes
+                  </div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                  <div class="feature-text">Plan nutricional personalizado</div>
+                </li>
+              </ul>
+            </div>
+            <div class="pricing-cta">
+              <a href="contacto.html" class="btn btn-primary">Elegir Plan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="comparison-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Comparativa de Planes</h2>
+          <p>Encuentra el plan que mejor se adapte a tus necesidades</p>
+        </div>
+
+        <div class="comparison-table-container">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Características</th>
+                <th>Básico</th>
+                <th>Premium</th>
+                <th>Elite</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Acceso a sala de musculación</td>
+                <td>
+                  <i class="fas fa-check check-icon"></i>
+                </td>
+                <td>
+                  <i class="fas fa-check check-icon"></i>
+                </td>
+                <td>
+                  <i class="fas fa-check check-icon"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>Horario extendido</td>
+                <td>
+                  <i class="fas fa-times x-icon"></i>
+                </td>
+                <td>
+                  <i class="fas fa-check check-icon"></i>
+                </td>
+                <td>
+                  <i class="fas fa-check check-icon"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>Clases grupales</td>
+                <td>4 al mes</td>
+                <td>Ilimitadas</td>
+                <td>Ilimitadas</td>
+              </tr>
+              <tr>
+                <td>Entrenamiento personal</td>
+                <td>
+                  <i class="fas fa-times x-icon"></i>
+                </td>
+                <td>1 sesión/mes</td>
+                <td>4 sesiones/mes</td>
+              </tr>
+              <tr>
+                <td>Evaluación física</td>
+                <td>Inicial</td>
+                <td>Trimestral</td>
+                <td>Mensual</td>
+              </tr>
+              <tr>
+                <td>Acceso a todas las sedes</td>
+                <td>
+                  <i class="fas fa-times x-icon"></i>
+                </td>
+                <td>
+                  <i class="fas fa-check check-icon"></i>
+                </td>
+                <td>
+                  <i class="fas fa-check check-icon"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>Plan nutricional</td>
+                <td>
+                  <i class="fas fa-times x-icon"></i>
+                </td>
+                <td>
+                  <i class="fas fa-times x-icon"></i>
+                </td>
+                <td>
+                  <i class="fas fa-check check-icon"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>Invitados</td>
+                <td>0</td>
+                <td>1 por mes</td>
+                <td>3 por mes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>¿Listo para comenzar tu transformación?</h2>
+          <p>Obtén una semana de prueba gratuita hoy mismo</p>
+          <a href="contacto.html" class="btn btn-primary">Comenzar Ahora</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <div class="logo">
+              <h2>Fit<span>Life</span></h2>
+            </div>
+            <p>
+              Transformando vidas a través del fitness y el bienestar desde
+              2013.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h3>Enlaces Rápidos</h3>
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="clases.html">Clases</a></li>
+              <li><a href="entrenadores.html">Entrenadores</a></li>
+              <li><a href="precios.html">Precios</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>Contacto</h3>
+            <ul>
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Av. Libertad 1234, Ciudad</span>
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                <span>(123) 456-7890</span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <span>info@fitlife.com</span>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-newsletter">
+            <h3>Suscríbete a nuestro boletín</h3>
+            <p>Recibe noticias, consejos y promociones exclusivas.</p>
+            <form class="newsletter-form">
+              <input
+                type="email"
+                placeholder="Tu correo electrónico"
+                required
+              />
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.238389258939!2d-65.3058376849666!3d-24.18559038438163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f4e8bd5a9f9%3A0x3e8b5e1b899f4d3f!2sSan%20Salvador%20de%20Jujuy%2C%20Jujuy%2C%20Argentina!5e0!3m2!1sen!2sus!4v1627913386325!5m2!1sen!2sus"
+            width="100%"
+            height="250"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 FitLife. Todos los derechos reservados.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Política de Privacidad</a>
+            <a href="#">Términos y Condiciones</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js" type="module"></script>
+  </body>
+</html>

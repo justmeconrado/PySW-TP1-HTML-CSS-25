@@ -1,0 +1,126 @@
+/* ==========================================================================
+   HERO PRINCIPAL
+   ========================================================================== */
+/**
+ * Sección hero principal con video de fondo
+ * - Ocupa toda la altura visible (viewport)
+ * - Video de fondo responsivo
+ * - Overlay para mejorar legibilidad
+ * - Contenido centrado vertical y horizontalmente
+ */
+.hero {
+  position: relative; // Contexto para elementos absolutos
+  height: 100vh; // Altura completa del viewport
+  min-height: 600px; // Altura mínima para desktop
+  display: flex; // Flexbox para centrado fácil
+  align-items: center; // Centrado vertical
+  overflow: hidden; // Oculta cualquier desbordamiento
+  margin-top: 80px; // Compensa el header fijo
+
+  /* Video de fondo */
+  video {
+    position: absolute; // Posicionamiento absoluto
+    top: 0;
+    left: 0;
+    width: 100%; // Ancho completo
+    height: 100%; // Altura completa
+    object-fit: cover; // Ajuste de imagen manteniendo proporción
+    z-index: -2; // Detrás del overlay
+  }
+
+  /* Overlay semitransparente */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.5)
+    );
+    z-index: -1; // Entre el video y el contenido
+  }
+
+  /* Contenido principal del hero */
+  .hero-content {
+    color: $color-white; // Texto blanco para contraste
+    text-align: center; // Alineación centrada
+    max-width: 800px; // Ancho máximo para legibilidad
+    margin: 0 auto; // Centrado horizontal
+    padding: $spacing-xl; // Espaciado interno
+    animation: fadeIn 1s ease-in-out; // Animación de aparición
+  }
+
+  /* Contenedor de botones */
+  .hero-buttons {
+    @include flex; // Usa mixin flex para centrado
+    gap: $spacing-md; // Espacio entre botones
+
+    // Versión para móviles
+    @include respond-to(md) {
+      flex-direction: column; // Apila botones verticalmente
+      gap: $spacing-md; // Espacio consistente
+    }
+  }
+}
+
+/* ==========================================================================
+   HERO SECUNDARIOS (PÁGINAS ESPECÍFICAS)
+   ========================================================================== */
+/**
+ * Hero sections para páginas específicas
+ * - Fondo con imagen y overlay
+ * - Altura reducida (50vh)
+ * - Estilo consistente pero más simple
+ */
+.classes-hero,
+.trainers-hero,
+.pricing-hero,
+.blog-hero,
+.contact-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("/placeholder.svg?height=600&width=1200") center/cover no-repeat;
+  height: 50vh; // Mitad de la altura del viewport
+  min-height: 400px; // Altura mínima
+  display: flex;
+  align-items: center; // Centrado vertical
+  justify-content: center; // Centrado horizontal
+  color: $color-white; // Texto blanco
+  text-align: center; // Alineación centrada
+  margin-top: 80px; // Compensa el header fijo
+}
+
+/* ==========================================================================
+   ESTILOS PARA MODO OSCURO
+   ========================================================================== */
+// Hero principal
+.dark-mode .hero .overlay {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.9)
+  ); // Overlay más oscuro
+}
+
+// Heroes secundarios
+.dark-mode .classes-hero,
+.dark-mode .trainers-hero,
+.dark-mode .pricing-hero,
+.dark-mode .blog-hero,
+.dark-mode .contact-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
+    url("/placeholder.svg?height=600&width=1200") center/cover no-repeat;
+}
+
+// Texto en modo oscuro
+.dark-mode .classes-hero h1,
+.dark-mode .trainers-hero h1,
+.dark-mode .pricing-hero h1,
+.dark-mode .blog-hero h1,
+.dark-mode .classes-hero p,
+.dark-mode .trainers-hero p,
+.dark-mode .pricing-hero p,
+.dark-mode .blog-hero p {
+  color: #ffffff; // Blanco puro
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); // Sombra para mejor legibilidad
+}

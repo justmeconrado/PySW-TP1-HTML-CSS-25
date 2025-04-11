@@ -1,0 +1,42 @@
+/* ==========================================================================
+   FUNCIÓN: REM (CONVERSIÓN DE UNIDADES)
+   ========================================================================== */
+/**
+ * Convierte pixeles a unidades rem basadas en el tamaño de fuente base
+ * @param {number} $pixels - Valor en pixeles a convertir
+ * @param {number} $context [$font-size-base] - Tamaño de referencia (opcional)
+ * @return {string} Valor convertido en rem
+ * @example font-size: rem(16); // → font-size: 1rem (asumiendo base 16px)
+ * @example padding: rem(24);  // → padding: 1.5rem
+ */
+@function rem($pixels, $context: $font-size-base) {
+  @return ($pixels / $context) * 1rem;
+}
+
+/* ==========================================================================
+   FUNCIÓN: LIGHTEN-COLOR (MODIFICACIÓN DE COLORES)
+   ========================================================================== */
+/**
+ * Aclara un color en un porcentaje específico
+ * @param {color} $color - Color base a modificar
+ * @param {number} $percentage - Porcentaje de aclarado (0-100%)
+ * @return {color} Versión aclarada del color
+ * @example background: lighten-color($color-primary, 20%);
+ */
+@function lighten-color($color, $percentage) {
+  @return lighten($color, $percentage);
+}
+
+/* ==========================================================================
+   FUNCIÓN: DARKEN-COLOR (MODIFICACIÓN DE COLORES)
+   ========================================================================== */
+/**
+ * Oscurece un color en un porcentaje específico
+ * @param {color} $color - Color base a modificar
+ * @param {number} $percentage - Porcentaje de oscurecimiento (0-100%)
+ * @return {color} Versión oscurecida del color
+ * @example border-color: darken-color($color-secondary, 15%);
+ */
+@function darken-color($color, $percentage) {
+  @return darken($color, $percentage);
+}

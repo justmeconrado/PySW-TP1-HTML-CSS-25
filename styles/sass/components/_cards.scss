@@ -1,0 +1,309 @@
+/* ==========================================================================
+   TARJETAS DE CARACTERÍSTICAS (FEATURE CARDS)
+   ========================================================================== */
+/**
+ * Tarjetas para destacar características o servicios
+ * - Diseño centrado con icono
+ * - Efecto hover con elevación
+ * - Contenido flexible en columna
+ */
+.feature-card {
+  background-color: $color-white; // Fondo blanco
+  border-radius: $border-radius-md; // Bordes redondeados
+  padding: $spacing-xl; // Espaciado interno grande
+  box-shadow: $shadow-sm; // Sombra ligera
+  @include transition(all); // Transición suave para hover
+  text-align: center; // Contenido centrado
+  height: 100%; // Altura completa del contenedor
+  display: flex; // Flexbox para layout
+  flex-direction: column; // Disposición en columna
+  overflow: hidden; // Oculta contenido que sobresale
+
+  // Efecto al pasar el mouse
+  &:hover {
+    transform: translateY(-10px); // Efecto de levitación
+    box-shadow: $shadow-md; // Sombra más pronunciada
+  }
+
+  // Contenedor de icono
+  .feature-icon {
+    margin-bottom: $spacing-md; // Espaciado inferior
+    color: $color-primary; // Color primario para iconos
+  }
+
+  // Título de la tarjeta
+  h3 {
+    margin-bottom: $spacing-md; // Espaciado inferior
+    font-weight: $font-weight-normal; // Peso de fuente normal
+    font-size: 1.6rem; // Tamaño de fuente aumentado
+    line-height: 1.2; // Interlineado ajustado
+  }
+
+  // Texto descriptivo
+  p {
+    color: $color-gray; // Color de texto secundario
+    font-family: $font-family; // Fuente principal
+    overflow-wrap: break-word; // Ajuste de palabras largas
+    word-wrap: break-word; // Compatibilidad
+    hyphens: auto; // Separación silábica automática
+  }
+}
+
+/* ==========================================================================
+   TARJETAS DE CLASES (CLASS CARDS)
+   ========================================================================== */
+/**
+ * Tarjetas para mostrar clases o cursos
+ * - Imagen destacada con efecto hover
+ * - Overlay semitransparente al pasar el mouse
+ * - Información estructurada
+ */
+.class-card {
+  border-radius: $border-radius-md; // Bordes redondeados
+  overflow: hidden; // Oculta esquinas de imagen
+  box-shadow: $shadow-sm; // Sombra ligera
+  @include transition(all); // Transición suave
+  background-color: $color-white; // Fondo blanco
+
+  // Efecto hover general
+  &:hover {
+    transform: translateY(-10px); // Efecto de levitación
+    box-shadow: $shadow-md; // Sombra más pronunciada
+  }
+
+  // Contenedor de imagen
+  .class-image {
+    position: relative; // Posicionamiento relativo
+    height: 200px; // Altura fija
+    overflow: hidden; // Oculta exceso de imagen
+
+    // Estilo de imagen
+    img {
+      width: 100%; // Ancho completo
+      height: 100%; // Altura completa
+      object-fit: cover; // Ajuste de imagen
+      @include transition(transform); // Transición para zoom
+    }
+  }
+
+  // Efecto zoom al pasar mouse
+  &:hover .class-image img {
+    transform: scale(1.1); // Zoom ligero
+  }
+
+  // Overlay semitransparente
+  .class-overlay {
+    position: absolute; // Posicionamiento absoluto
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); // Fondo oscuro semitransparente
+    @include flex; // Centrado con flexbox
+    opacity: 0; // Inicialmente invisible
+    @include transition(opacity); // Transición suave
+  }
+
+  // Muestra overlay al pasar mouse
+  &:hover .class-overlay {
+    opacity: 1; // Visible al hover
+  }
+
+  // Contenido descriptivo
+  .class-content {
+    padding: $spacing-lg; // Espaciado interno
+
+    // Título de la clase
+    h3 {
+      margin-bottom: $spacing-sm; // Espaciado inferior
+      font-weight: $font-weight-normal; // Peso de fuente
+      font-size: 1.8rem; // Tamaño aumentado
+    }
+
+    // Descripción
+    p {
+      color: $color-gray; // Color secundario
+      margin-bottom: $spacing-md; // Espaciado inferior
+      font-family: $font-family; // Fuente principal
+    }
+  }
+
+  // Metadatos (duración, nivel, etc)
+  .class-meta {
+    display: flex; // Disposición en línea
+    justify-content: space-between; // Espaciado uniforme
+    font-size: 0.875rem; // Tamaño de fuente pequeño
+    color: $color-gray; // Color secundario
+    font-family: $font-family; // Fuente principal
+  }
+}
+
+/* ==========================================================================
+   TARJETAS DE ENTRENADORES (TRAINER CARDS)
+   ========================================================================== */
+/**
+ * Tarjetas para mostrar perfiles de entrenadores
+ * - Foto grande con efecto hover
+ * - Información centrada
+ * - Redes sociales interactivas
+ */
+.trainer-card {
+  border-radius: $border-radius-md; // Bordes redondeados
+  overflow: hidden; // Oculta exceso
+  box-shadow: $shadow-sm; // Sombra ligera
+  @include transition(all); // Transición suave
+  background-color: $color-white; // Fondo blanco
+
+  // Efecto hover general
+  &:hover {
+    transform: translateY(-10px); // Efecto de levitación
+    box-shadow: $shadow-md; // Sombra más pronunciada
+  }
+
+  // Contenedor de imagen
+  .trainer-image {
+    height: 300px; // Altura fija mayor
+    overflow: hidden; // Oculta exceso
+    position: relative; // Para posicionamiento
+
+    // Estilo de imagen
+    img {
+      width: 100%; // Ancho completo
+      height: 100%; // Altura completa
+      object-fit: cover; // Ajuste de imagen
+      @include transition(transform); // Transición para zoom
+    }
+  }
+
+  // Efecto zoom al pasar mouse
+  &:hover .trainer-image img {
+    transform: scale(1.1); // Zoom ligero
+  }
+
+  // Contenedor de información
+  .trainer-info {
+    padding: $spacing-lg; // Espaciado interno
+    text-align: center; // Contenido centrado
+
+    // Nombre del entrenador
+    h3 {
+      margin-bottom: $spacing-xs; // Espaciado inferior pequeño
+      font-weight: $font-weight-normal; // Peso de fuente
+      font-size: 1.8rem; // Tamaño aumentado
+    }
+
+    // Especialidad
+    p {
+      color: $color-gray; // Color secundario
+      margin-bottom: $spacing-md; // Espaciado inferior
+      font-family: $font-family; // Fuente principal
+    }
+  }
+
+  // Contenedor de redes sociales
+  .trainer-social {
+    @include flex; // Centrado con flexbox
+    gap: $spacing-md; // Espacio entre iconos
+
+    // Estilo de enlaces
+    a {
+      @include flex; // Centrado interno
+      width: 36px; // Tamaño fijo
+      height: 36px;
+      border-radius: 50%; // Forma circular
+      background-color: $color-light; // Fondo gris claro
+      color: $color-dark; // Color de icono
+      @include transition(all, $transition-fast); // Transición rápida
+
+      // Efecto hover
+      &:hover {
+        background-color: $color-primary; // Fondo primario
+        color: $color-white; // Icono blanco
+        transform: translateY(-3px); // Levitación ligera
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   TARJETAS DE BLOG (BLOG CARDS)
+   ========================================================================== */
+/**
+ * Tarjetas para artículos de blog
+ * - Imagen superior
+ * - Contenido flexible
+ * - Footer con metadatos
+ */
+.blog-card {
+  background-color: $color-white; // Fondo blanco
+  border-radius: $border-radius-md; // Bordes redondeados
+  overflow: hidden; // Oculta exceso
+  box-shadow: $shadow-sm; // Sombra ligera
+  @include transition(all); // Transición suave
+  display: flex; // Flexbox para layout
+  flex-direction: column; // Disposición en columna
+
+  // Efecto hover general
+  &:hover {
+    transform: translateY(-10px); // Efecto de levitación
+    box-shadow: $shadow-md; // Sombra más pronunciada
+  }
+
+  // Contenedor de imagen
+  .blog-card-image {
+    height: 200px; // Altura fija
+    overflow: hidden; // Oculta exceso
+
+    // Estilo de imagen
+    img {
+      width: 100%; // Ancho completo
+      height: 100%; // Altura completa
+      object-fit: cover; // Ajuste de imagen
+      @include transition(transform); // Transición para zoom
+    }
+  }
+
+  // Efecto zoom al pasar mouse
+  &:hover .blog-card-image img {
+    transform: scale(1.1); // Zoom ligero
+  }
+
+  // Contenido principal
+  .blog-card-content {
+    padding: $spacing-lg; // Espaciado interno
+    flex-grow: 1; // Ocupa espacio disponible
+    display: flex; // Flexbox para layout
+    flex-direction: column; // Disposición en columna
+  }
+
+  // Metadatos (fecha, categoría)
+  .blog-card-meta {
+    display: flex; // Disposición en línea
+    align-items: center; // Centrado vertical
+    gap: $spacing-sm; // Espacio entre elementos
+    margin-bottom: $spacing-sm; // Espaciado inferior
+    font-size: 0.875rem; // Tamaño pequeño
+    color: $color-gray; // Color secundario
+  }
+
+  // Título del artículo
+  .blog-card-title {
+    font-size: 1.25rem; // Tamaño mediano
+    margin-bottom: $spacing-sm; // Espaciado inferior
+    font-weight: $font-weight-medium; // Peso de fuente medio
+  }
+
+  // Extracto del contenido
+  .blog-card-excerpt {
+    color: $color-gray; // Color secundario
+    margin-bottom: $spacing-md; // Espaciado inferior
+    flex-grow: 1; // Ocupa espacio disponible
+  }
+
+  // Pie de tarjeta (autor, leer más)
+  .blog-card-footer {
+    display: flex; // Disposición en línea
+    justify-content: space-between; // Elementos a los extremos
+    align-items: center; // Centrado vertical
+  }
+}

@@ -1,0 +1,142 @@
+/* ==========================================================================
+   BASE GLOBAL
+   ========================================================================== */
+/* Aplica box-sizing border-box a todos los elementos y pseudoelementos */
+/* Elimina márgenes y paddings por defecto */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background-color: #26D7C5; /* Color de fondo al seleccionar texto */
+  color: $color-white; /* Color de texto al seleccionar */
+}
+/* ==========================================================================
+   ELEMENTOS BASE
+   ========================================================================== */
+/* Establece el tamaño de fuente base y scroll suave para toda la página */
+html {
+  font-size: $font-size-base; /* Tamaño de fuente base (definido en variables) */
+  scroll-behavior: smooth; /* Desplazamiento suave al hacer scroll */
+  margin: 0 auto; /* Centra el contenedor en la pantalla */
+}
+html, body {
+  height: 100%; /* Asegura que el body ocupe toda la altura de la ventana */
+}
+
+/* Estilos base para el cuerpo del documento */
+body {
+  font-family: $font-family; /* Fuente principal del texto */
+  line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
+  color: $color-dark; /* Color de texto principal */
+  background-color: $color-white; /* Color de fondo */
+  overflow-x: hidden; /* Previene scroll horizontal no deseado */
+  @include transition(background-color color); /* Transición suave para cambios de color */
+}
+
+/* ==========================================================================
+   TIPOGRAFÍA
+   ========================================================================== */
+/* Estilos para todos los elementos de encabezado */
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-titles; /* Fuente diferente para títulos */
+  text-transform: uppercase; /* Transforma texto a mayúsculas */
+  letter-spacing: 1px; /* Espaciado entre letras */
+  line-height: 1.2; /* Espaciado entre líneas más ajustado que el texto normal */
+}
+
+/* ==========================================================================
+   ENLACES
+   ========================================================================== */
+/* Estilos base para enlaces */
+a {
+  color: $color-primary; /* Color principal para enlaces */
+  text-decoration: none; /* Elimina subrayado por defecto */
+  @include transition(color, $transition-fast); /* Transición suave al cambiar color */
+  
+  /* Estado hover para enlaces */
+  &:hover {
+    color: $color-primary-dark; /* Color más oscuro al pasar el mouse */
+  }
+}
+
+/* ==========================================================================
+   LISTAS
+   ========================================================================== */
+/* Elimina los estilos por defecto de las listas no ordenadas */
+ul {
+  list-style: none;
+}
+
+/* ==========================================================================
+   IMÁGENES
+   ========================================================================== */
+/* Hace que las imágenes sean responsivas y evita problemas de espaciado */
+img {
+  max-width: 100%; /* No excede el ancho de su contenedor */
+  height: auto; /* Mantiene proporción de aspecto */
+  display: block; /* Elimina espacio extra debajo de la imagen */
+}
+
+/* ==========================================================================
+   FORMULARIOS
+   ========================================================================== */
+/* Normaliza estilos para elementos de formulario */
+button,
+input,
+textarea,
+select {
+  font-family: $font-family; /* Usa la fuente principal */
+  font-size: inherit; /* Hereda el tamaño de fuente */
+  outline: none; /* Elimina outline por defecto (se redefine para accesibilidad) */
+  border: none; /* Elimina borde por defecto */
+}
+
+/* ==========================================================================
+   ACCESIBILIDAD
+   ========================================================================== */
+/* Estilos de foco visibles para navegación con teclado */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus,
+.btn:focus,
+.menu-item a:focus {
+  outline: 2px solid $color-primary; /* Outline visible para elementos con foco */
+  outline-offset: 2px; /* Espacio entre el outline y el elemento */
+}
+
+/* Enlace "Saltar al contenido" para usuarios de teclado */
+.skip-link {
+  position: absolute; /* Posicionamiento fuera del flujo normal */
+  top: -40px; /* Oculto por defecto (fuera de la pantalla) */
+  left: 0;
+  background: $color-primary; /* Color de fondo */
+  color: white; /* Color de texto */
+  padding: 8px; /* Espaciado interno */
+  z-index: 100; /* Asegura que esté por encima de otros elementos */
+  transition: top 0.3s; /* Transición suave al aparecer */
+  
+  /* Muestra el enlace cuando recibe foco */
+  &:focus {
+    top: 0; /* Posiciona en la parte superior de la pantalla */
+  }
+}
+
+/* Clase para ocultar elementos visualmente pero mantenerlos accesibles para lectores de pantalla */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

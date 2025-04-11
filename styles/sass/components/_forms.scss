@@ -1,0 +1,208 @@
+/* ==========================================================================
+   GRUPOS DE FORMULARIO
+   ========================================================================== */
+/**
+ * Contenedor para agrupar elementos relacionados del formulario
+ * - Proporciona estructura y espaciado consistente
+ */
+.form-group {
+  margin-bottom: $spacing-md; // Espaciado inferior estándar
+
+  // Variante para elementos que ocupan ancho completo
+  &.full-width {
+    grid-column: 1 / -1; // Ocupa todas las columnas en grid
+  }
+}
+
+/* ==========================================================================
+   ETIQUETAS DE FORMULARIO
+   ========================================================================== */
+/**
+ * Estilo para etiquetas descriptivas de campos
+ * - Diseño accesible y claro
+ */
+.form-label {
+  display: block; // Ocupa línea completa
+  margin-bottom: $spacing-xs; // Espaciado pequeño inferior
+  font-weight: $font-weight-medium; // Peso de fuente medio
+}
+
+/* ==========================================================================
+   CONTROLES DE FORMULARIO
+   ========================================================================== */
+/**
+ * Estilo base para inputs y textareas
+ * - Diseño consistente para todos los campos
+ */
+.form-control {
+  width: 100%; // Ancho completo
+  padding: 0.75rem; // Espaciado interno confortable
+  border: 1px solid $color-gray-light; // Borde sutil
+  border-radius: $border-radius-md; // Bordes redondeados
+  background-color: $color-white; // Fondo blanco
+  @include transition(
+    border-color box-shadow,
+    $transition-fast
+  ); // Transición suave
+
+  // Estilo para campo con foco
+  &:focus {
+    border-color: $color-primary; // Borde color primario
+    box-shadow: 0 0 0 3px rgba(0, 200, 255, 0.2); // Sombra de foco
+  }
+
+  // Estilo para campo válido
+  &:valid {
+    border-color: #28a745; // Verde para indicar validación
+  }
+
+  // Estilo para campo inválido (cuando no está vacío)
+  &:invalid:not(:placeholder-shown) {
+    border-color: #dc3545; // Rojo para indicar error
+  }
+}
+
+/* Textarea específico */
+textarea.form-control {
+  min-height: 150px; // Altura mínima adecuada
+  resize: vertical; // Permite redimensionar solo vertical
+}
+
+/* ==========================================================================
+   BOTÓN DE ENVIO
+   ========================================================================== */
+.form-submit {
+  grid-column: 1 / -1; // Ocupa ancho completo en grid
+  text-align: right; // Alineación a la derecha
+
+  button {
+    padding: 0.75rem 2rem; // Espaciado interno generoso
+  }
+}
+
+/* ==========================================================================
+   CHECKBOX PERSONALIZADO
+   ========================================================================== */
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 35px; // Espacio para el checkbox custom
+  cursor: pointer;
+  font-weight: normal;
+
+  // Oculta el checkbox nativo
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  // Estilo del checkbox visual
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: $color-gray-light;
+    border-radius: 3px;
+    @include transition(all, $transition-fast);
+  }
+
+  // Efecto hover
+  &:hover input ~ .checkmark {
+    background-color: $color-gray;
+  }
+
+  // Estilo cuando está marcado
+  input:checked ~ .checkmark {
+    background-color: $color-primary;
+  }
+
+  // Creación del checkmark (✓)
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+}
+
+/* ==========================================================================
+   FORMULARIO DE NEWSLETTER
+   ========================================================================== */
+.newsletter-form {
+  display: flex; // Layout en línea
+  margin-top: $spacing-md;
+
+  input {
+    flex-grow: 1; // Ocupa espacio disponible
+    padding: 0.75rem;
+    border-radius: $border-radius-md 0 0 $border-radius-md; // Redondeo izquierdo
+    background-color: rgba(255, 255, 255, 0.1); // Fondo semitransparente
+    color: $color-white;
+
+    // Estilo del placeholder
+    &::placeholder {
+      color: $color-gray;
+    }
+  }
+
+  button {
+    border-radius: 0 $border-radius-md $border-radius-md 0; // Redondeo derecho
+
+  }
+}
+
+/* ==========================================================================
+   FORMULARIO DE BÚSQUEDA
+   ========================================================================== */
+.search-form {
+  display: flex; // Layout en línea
+  margin-bottom: $spacing-sm;
+
+  .search-input {
+    flex-grow: 1; // Ocupa espacio disponible
+    padding: 0.75rem;
+    border: 1px solid $color-gray-light;
+    border-radius: $border-radius-md 0 0 $border-radius-md; // Redondeo izquierdo
+    @include transition(border-color, $transition-fast);
+
+    // Estilo para campo con foco
+    &:focus {
+      border-color: $color-primary;
+      outline: none;
+    }
+  }
+
+  .search-button {
+    background-color: $color-primary;
+    color: $color-white;
+    border: none;
+    padding: 0 1rem;
+    border-radius: 0 $border-radius-md $border-radius-md 0; // Redondeo derecho
+    cursor: pointer;
+    @include transition(background-color, $transition-fast);
+
+    // Efecto hover
+    &:hover {
+      background-color: $color-primary-dark;
+    }
+  }
+}

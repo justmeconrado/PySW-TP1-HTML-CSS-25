@@ -1,0 +1,597 @@
+/* ==========================================================================
+   SECCIÓN PRINCIPAL DEL BLOG
+   ========================================================================== */
+.blog-section {
+  padding: $spacing-xxl 0; // Espaciado vertical extra grande
+  .container {
+    padding: $spacing-xl 0; // Espaciado vertical grande
+    max-width: 1024px; // Ancho máximo para contenido
+    margin: 0 auto; // Centrado horizontal
+  }
+}
+
+/* ==========================================================================
+     BARRA LATERAL (SIDEBAR)
+     ========================================================================== */
+.blog-sidebar {
+  position: sticky; // Posicionamiento fijo al hacer scroll
+  top: 100px; // Distancia desde la parte superior
+  align-self: start; // Alineación superior en grid
+}
+
+/* Widgets de la sidebar */
+.sidebar-widget {
+  background-color: $color-white;
+  border-radius: $border-radius-md;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-xl;
+  box-shadow: $shadow-sm; // Sombra sutil
+}
+
+/* Títulos de widgets */
+.sidebar-widget-title {
+  font-size: 1.25rem;
+  margin-bottom: $spacing-md;
+  position: relative;
+  padding-bottom: $spacing-sm;
+
+  // Línea decorativa inferior
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: $color-primary; // Color de acento
+  }
+}
+
+/* ==========================================================================
+     LISTA DE CATEGORÍAS
+     ========================================================================== */
+.categories-list {
+  list-style: none; // Elimina estilos de lista
+
+  li {
+    margin-bottom: $spacing-sm;
+    border-bottom: 1px solid $color-gray-light; // Separador
+    padding-bottom: $spacing-sm;
+
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+
+  a {
+    display: flex;
+    justify-content: space-between; // Distribuye texto y contador
+    color: $color-dark;
+    @include transition(color, $transition-fast);
+
+    &:hover {
+      color: $color-primary; // Color de acento al pasar mouse
+    }
+  }
+}
+
+/* Contador de categorías */
+.categories-count {
+  background-color: $color-light;
+  color: $color-gray;
+  padding: 0.125rem 0.5rem;
+  border-radius: $border-radius-sm;
+  font-size: 0.75rem; // Texto pequeño
+}
+
+/* ==========================================================================
+     NUBE DE ETIQUETAS
+     ========================================================================== */
+.tags-cloud {
+  display: flex;
+  flex-wrap: wrap; // Permite múltiples líneas
+  gap: $spacing-xs; // Espacio entre etiquetas
+}
+
+/* Items individuales de etiquetas */
+.tag-item {
+  background-color: $color-light;
+  color: $color-gray;
+  padding: 0.25rem 0.75rem;
+  border-radius: $border-radius-sm;
+  font-size: 0.875rem;
+  @include transition(all, $transition-fast);
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white; // Cambio de color al pasar mouse
+  }
+}
+
+/* ==========================================================================
+     ENTRADAS RECIENTES
+     ========================================================================== */
+.recent-post {
+  display: flex;
+  gap: $spacing-md; // Espacio entre imagen y contenido
+  margin-bottom: $spacing-md;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Imagen de entrada reciente */
+.recent-post-image {
+  width: 80px;
+  height: 80px;
+  border-radius: $border-radius-sm;
+  overflow: hidden;
+  flex-shrink: 0; // Evita que se reduzca
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Ajuste de imagen
+  }
+}
+
+/* Contenido de entrada reciente */
+.recent-post-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.recent-post-title {
+  font-weight: $font-weight-medium;
+  margin-bottom: $spacing-xs;
+  font-size: 0.875rem; // Texto un poco más pequeño
+}
+
+.recent-post-date {
+  font-size: 0.75rem;
+  color: $color-gray; // Color secundario
+}
+
+/* ==========================================================================
+     ENTRADA DESTACADA
+     ========================================================================== */
+.featured-post {
+  grid-column: 1 / -1; // Ocupa todas las columnas
+  display: grid;
+  grid-template-columns: 1fr 1fr; // Dos columnas
+  gap: $spacing-xl; // Espacio entre columnas
+  background-color: $color-white;
+  border-radius: $border-radius-md;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+  @include transition(all);
+  margin-bottom: $spacing-xl;
+
+  // Versión para pantallas grandes
+  @include respond-to(lg) {
+    grid-template-columns: 1fr; // Una columna
+  }
+
+  // Efecto hover
+  &:hover {
+    transform: translateY(-10px); // Levitación
+    box-shadow: $shadow-md; // Sombra más pronunciada
+  }
+}
+
+/* Imagen de entrada destacada */
+.featured-post-image {
+  height: 100%;
+  min-height: 300px;
+
+  @include respond-to(lg) {
+    height: 300px; // Altura fija en móvil
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @include transition(transform); // Transición para zoom
+  }
+}
+
+// Efecto zoom al pasar mouse
+.featured-post:hover .featured-post-image img {
+  transform: scale(1.05);
+}
+
+/* Contenido de entrada destacada */
+.featured-post-content {
+  padding: $spacing-xl;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Badge destacado */
+.featured-post-badge {
+  display: inline-block;
+  background-color: $color-primary;
+  color: $color-white;
+  padding: 0.25rem 0.5rem;
+  border-radius: $border-radius-sm;
+  font-size: 0.75rem;
+  margin-bottom: $spacing-sm;
+}
+
+/* Título de entrada destacada */
+.featured-post-title {
+  font-size: 1.75rem; // Tamaño grande
+  margin-bottom: $spacing-md;
+  font-weight: $font-weight-medium;
+}
+
+/* Extracto de entrada */
+.featured-post-excerpt {
+  color: $color-gray; // Color secundario
+  margin-bottom: $spacing-lg;
+}
+
+/* Metadatos (autor, fecha) */
+.featured-post-meta {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  margin-top: auto; // Empuja hacia abajo en flex
+}
+
+/* ==========================================================================
+     PAGINACIÓN
+     ========================================================================== */
+.pagination {
+  display: flex;
+  justify-content: center; // Centrado horizontal
+  margin-top: $spacing-xl;
+  padding: $spacing-xl;
+}
+
+.pagination-list {
+  display: flex;
+  gap: $spacing-xs; // Espacio entre items
+}
+
+/* Items de paginación */
+.pagination-item {
+  @include flex; // Centrado con mixin
+  width: 40px;
+  height: 40px;
+  border-radius: $border-radius-sm;
+  background-color: $color-white;
+  color: $color-dark;
+  font-weight: $font-weight-medium;
+  @include transition(all, $transition-fast);
+
+  // Efecto hover
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+
+  // Estado activo
+  &.active {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+}
+
+/* ==========================================================================
+     SCROLL HORIZONTAL (ENTRADAS RELACIONADAS)
+     ========================================================================== */
+.scroll-container {
+  scroll-snap-type: x mandatory; // Scroll suave tipo "snap"
+  overflow-x: auto; // Scroll horizontal
+  display: flex;
+  gap: $spacing-md;
+  padding-bottom: $spacing-md;
+  margin-bottom: $spacing-xl;
+}
+
+/* Items del scroll horizontal */
+.scroll-item {
+  scroll-snap-align: start; // Alineación al hacer scroll
+  flex: 0 0 300px; // Ancho fijo, sin crecer ni encoger
+  background-color: $color-white;
+  border-radius: $border-radius-md;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+  @include transition(all);
+
+  // Efecto hover
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: $shadow-md;
+  }
+}
+
+.blog-card-content {
+  padding: 1rem;
+}
+/* ==================== SECCIÓN DE COMENTARIOS ==================== */
+.blog-post-comments {
+  background-color: $color-light;
+  padding: $spacing-xxl 0;
+  margin: $spacing-xxl auto;
+  border-radius: $border-radius-md;
+  
+  .container {
+    max-width: 800px;
+    padding: 0 $spacing-lg;
+  }
+  
+  .section-title {
+    position: relative;
+    padding-bottom: $spacing-sm;
+    margin-bottom: $spacing-xl;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: $color-primary;
+    }
+  }
+}
+
+/* Comentario individual mejorado */
+.comment {
+  display: flex;
+  gap: $spacing-lg;
+  background-color: $color-white;
+  border-radius: $border-radius-md;
+  padding: $spacing-xl;
+  margin-bottom: $spacing-xl;
+  box-shadow: $shadow-sm;
+  @include transition(all);
+  position: relative;
+  
+  @include respond-to(md) {
+    flex-direction: column;
+    padding: $spacing-lg;
+  }
+  
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-3px);
+  }
+  
+  &-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: $color-primary;
+    color: $color-white;
+    @include flex;
+    font-weight: $font-weight-bold;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    position: relative;
+    
+    &::before {
+      content: attr(data-initial);
+    }
+    
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle at 70% 30%,
+        rgba(255, 255, 255, 0.5) 0%,
+        rgba(255, 255, 255, 0) 60%
+      );
+    }
+  }
+  
+  &-content {
+    flex: 1;
+  }
+  
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-md;
+    
+    @include respond-to(sm) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $spacing-xs;
+    }
+  }
+  
+  &-author {
+    font-weight: $font-weight-bold;
+    color: $color-dark;
+  }
+  
+  &-date {
+    font-size: 0.875rem;
+    color: $color-gray;
+  }
+  
+  &-text {
+    line-height: 1.6;
+    margin-bottom: $spacing-md;
+  }
+  
+  &-actions {
+    display: flex;
+    gap: $spacing-md;
+    
+    button {
+      background: none;
+      border: none;
+      color: $color-primary;
+      font-size: 0.875rem;
+      cursor: pointer;
+      @include transition(all);
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.nested-comment {
+  margin-top: $spacing-xl;
+  margin-left: $spacing-xxl;
+  position: relative;
+  
+  @include respond-to(md) {
+    margin-left: $spacing-xl;
+  }
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: -$spacing-xl;
+    left: -$spacing-xl;
+    width: $spacing-xl;
+    height: calc(100% + $spacing-xl);
+    border-left: 2px solid $color-gray-light;
+    border-bottom: 2px solid $color-gray-light;
+    border-bottom-left-radius: $border-radius-md;
+  }
+}
+
+/* Formulario de comentarios*/
+.comment-form-container {
+  background-color: $color-white;
+  border-radius: $border-radius-md;
+  padding: $spacing-xl;
+  margin-top: $spacing-xxl;
+  box-shadow: $shadow-sm;
+  
+  h3 {
+    position: relative;
+    padding-bottom: $spacing-sm;
+    margin-bottom: $spacing-xl;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: $color-primary;
+    }
+  }
+}
+
+.comment-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-lg;
+  
+  @include respond-to(md) {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-group {
+    margin-bottom: $spacing-lg;
+    
+    &.full-width {
+      grid-column: 1 / -1;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: $spacing-xs;
+      font-weight: $font-weight-medium;
+      color: $color-dark;
+    }
+    
+    input, textarea {
+      width: 100%;
+      padding: $spacing-sm $spacing-md;
+      border: 1px solid $color-gray-light;
+      border-radius: $border-radius-sm;
+      @include transition(all);
+      
+      &:focus {
+        border-color: $color-primary;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
+      }
+    }
+    
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+  }
+  
+  .form-submit {
+    grid-column: 1 / -1;
+    margin-top: $spacing-lg;
+    text-align: right;
+    
+    .btn-primary {
+      padding: $spacing-sm $spacing-xl;
+      font-weight: $font-weight-medium;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: flex-start;
+  margin: $spacing-md 0;
+  background-color: $color-light;
+  padding: $spacing-md;
+  border-radius: $border-radius-sm;
+  border: 1px solid $color-gray-light;
+  
+  input[type="checkbox"] {
+    margin-right: $spacing-md;
+    min-width: 20px;
+    height: 20px;
+    accent-color: $color-primary;
+    cursor: pointer;
+    margin-top: 2px;
+  }
+  
+  label {
+    font-size: 0.9rem;
+    color: $color-dark;
+    cursor: pointer;
+    line-height: 1.4;
+    margin-bottom: 0;
+    
+    a {
+      color: $color-primary;
+      text-decoration: none;
+      font-weight: $font-weight-medium;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* Estilos específicos para el checkbox de guardar información */
+#save-info {
+  margin: auto;
+  padding: 0;
+}

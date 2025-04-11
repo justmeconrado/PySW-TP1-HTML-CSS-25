@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#b01f2e" />
+    <title>Entrenadores - FitLife</title>
+    <link rel="icon" href="assets/images/icon-fl.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="styles/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="assets/images/icon-fl.svg"
+              alt="FitLife Logo"
+              class="logo-icon"
+            />
+            <h1>Fit<span>Life</span></h1>
+          </a>
+        </div>
+
+        <nav class="main-nav">
+          <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+          <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+
+          <ul class="menu">
+            <li class="menu-item"><a href="index.html">Inicio</a></li>
+            <li class="menu-item has-submenu">
+              <a href="clases.html">Clases</a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <div class="mega-menu-column">
+                    <h3>Cardio</h3>
+                    <ul>
+                      <li><a href="clases.html#spinning">Spinning</a></li>
+                      <li><a href="clases.html#zumba">Zumba</a></li>
+                      <li><a href="clases.html#hiit">HIIT</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-menu-column">
+                    <h3>Fuerza</h3>
+                    <ul>
+                      <li><a href="clases.html#crossfit">CrossFit</a></li>
+                      <li><a href="clases.html#funcional">Funcional</a></li>
+                      <li><a href="clases.html#musculacion">Musculación</a></li>
+                    </ul>
+                  </div>
+                  <div class="mega-menu-column">
+                    <h3>Mente-Cuerpo</h3>
+                    <ul>
+                      <li><a href="clases.html#yoga">Yoga</a></li>
+                      <li><a href="clases.html#pilates">Pilates</a></li>
+                      <li><a href="clases.html#meditacion">Meditación</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="menu-item">
+              <a href="entrenadores.html">Entrenadores</a>
+            </li>
+            <li class="menu-item"><a href="contacto.html">Contacto</a></li>
+            <li class="menu-item"><a href="precios.html">Precios</a></li>
+            <li class="menu-item"><a href="blog.html">Blog</a></li>
+            <li class="menu-item cta-button">
+              <a href="contacto.html">Prueba Gratis</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="theme-toggle">
+          <input
+            type="checkbox"
+            id="dark-mode-toggle"
+            class="dark-mode-toggle"
+          />
+          <label
+            for="dark-mode-toggle"
+            class="dark-mode-label"
+            aria-label="Cambiar a modo oscuro"
+          >
+            <i class="fas fa-sun sun-icon"></i>
+            <i class="fas fa-moon moon-icon"></i>
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero trainers-hero">
+      <video autoplay muted loop playsinline>
+        <source src="assets/videos/trainers-hero.mp4" type="video/mp4" />
+      </video>
+      <div class="overlay"></div>
+      <div class="hero-content container">
+        <h2 class="hero-title">NUESTROS ENTRENADORES</h2>
+        <p class="hero-subtitle">
+          Conoce al equipo de profesionales que te guiará en tu camino
+        </p>
+      </div>
+    </section>
+
+    <section class="trainers-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Equipo de Expertos</h2>
+          <p>Profesionales certificados con años de experiencia</p>
+        </div>
+
+        <div class="trainers-grid">
+          <div class="trainer-flip-card" tabindex="0">
+            <div class="trainer-flip-inner">
+              <div class="trainer-flip-front">
+                <div class="trainer-image">
+                  <img
+                    src="/assets/images/trainers/trainer-jm.jpg"
+                    alt="Javier Méndez"
+                  />
+                </div>
+                <div class="trainer-info">
+                  <h3>Javier Méndez</h3>
+                  <p>Especialista en CrossFit</p>
+                </div>
+              </div>
+              <div class="trainer-flip-back">
+                <h3>Javier Méndez</h3>
+                <p class="trainer-bio">
+                  Con más de 8 años de experiencia en entrenamiento funcional y
+                  CrossFit. Certificado por CrossFit Level 2 y especialista en
+                  nutrición deportiva.
+                </p>
+
+                <div class="trainer-skills">
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Fuerza</span>
+                      <span>95%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div
+                        class="skill-progress"
+                        style="--skill-percent: 95%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Resistencia</span>
+                      <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div
+                        class="skill-progress"
+                        style="--skill-percent: 90%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Nutrición</span>
+                      <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div
+                        class="skill-progress"
+                        style="--skill-percent: 85%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="trainer-rating">
+                  <div class="rating-stars">
+                    <span style="--rating-percent: 95%"></span>
+                  </div>
+                </div>
+
+                <div class="trainer-classes">
+                  <h4>Clases</h4>
+                  <ul>
+                    <li>CrossFit</li>
+                    <li>HIIT</li>
+                    <li>Funcional</li>
+                  </ul>
+                </div>
+
+                <div class="trainer-social">
+                  <a href="#" aria-label="Instagram de Javier">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="#" aria-label="Twitter de Javier">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="trainer-flip-card" tabindex="0">
+            <div class="trainer-flip-inner">
+              <div class="trainer-flip-front">
+                <div class="trainer-image">
+                  <img
+                    src="assets/images/trainers/trainer-al.jpg"
+                    alt="Ana López"
+                  />
+                </div>
+                <div class="trainer-info">
+                  <h3>Ana López</h3>
+                  <p>Instructora de Yoga</p>
+                </div>
+              </div>
+              <div class="trainer-flip-back">
+                <h3>Ana López</h3>
+                <p class="trainer-bio">
+                  Instructora certificada de Yoga con 10 años de experiencia.
+                  Especializada en Hatha Yoga, Vinyasa y meditación. Formada en
+                  India y Estados Unidos.
+                </p>
+
+                <div class="trainer-skills">
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Flexibilidad</span>
+                      <span>98%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div
+                        class="skill-progress"
+                        style="--skill-percent: 98%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Meditación</span>
+                      <span>95%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div
+                        class="skill-progress"
+                        style="--skill-percent: 95%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Respiración</span>
+                      <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div
+                        class="skill-progress"
+                        style="--skill-percent: 90%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="trainer-rating">
+                  <div class="rating-stars">
+                    <span style="--rating-percent: 98%"></span>
+                  </div>
+                </div>
+
+                <div class="trainer-classes">
+                  <h4>Clases</h4>
+                  <ul>
+                    <li>Yoga</li>
+                    <li>Meditación</li>
+                    <li>Pilates</li>
+                  </ul>
+                </div>
+
+                <div class="trainer-social">
+                  <a href="#" aria-label="Instagram de Ana">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="#" aria-label="Twitter de Ana">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="trainer-flip-card" tabindex="0">
+            <div class="trainer-flip-inner">
+              <div class="trainer-flip-front">
+                <div class="trainer-image">
+                  <img
+                    src="assets/images/trainers/trainer-ml.jpg"
+                    alt="Miguel Torres"
+                  />
+                </div>
+                <div class="trainer-info">
+                  <h3>Miguel Torres</h3>
+                  <p>Especialista en Nutrición</p>
+                </div>
+              </div>
+              <div class="trainer-flip-back">
+                <h3>Miguel Torres</h3>
+                <p class="trainer-bio">
+                  Nutricionista deportivo con 7 años de experiencia.
+                  Especializado en planes de alimentación para deportistas y
+                  pérdida de peso saludable.
+                </p>
+
+                <div class="trainer-skills">
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Nutrición</span>
+                      <span>97%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div
+                        class="skill-progress"
+                        style="--skill-percent: 97%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Suplementación</span>
+                      <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div
+                        class="skill-progress"
+                        style="--skill-percent: 90%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Entrenamiento</span>
+                      <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div
+                        class="skill-progress"
+                        style="--skill-percent: 85%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="trainer-rating">
+                  <div class="rating-stars">
+                    <span style="--rating-percent: 94%"></span>
+                  </div>
+                </div>
+
+                <div class="trainer-classes">
+                  <h4>Especialidades</h4>
+                  <ul>
+                    <li>Nutrición</li>
+                    <li>HIIT</li>
+                    <li>Pérdida de peso</li>
+                  </ul>
+                </div>
+
+                <div class="trainer-social">
+                  <a href="#" aria-label="Instagram de Miguel">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="#" aria-label="Twitter de Miguel">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="trainer-flip-card" tabindex="0">
+            <div class="trainer-flip-inner">
+              <div class="trainer-flip-front">
+                <div class="trainer-image">
+                  <img
+                    src="assets/images/trainers/trainer-lm.jpg"
+                    alt="Laura Martínez"
+                  />
+                </div>
+                <div class="trainer-info">
+                  <h3>Laura Martínez</h3>
+                  <p>Entrenadora de Funcional</p>
+                </div>
+              </div>
+              <div class="trainer-flip-back">
+                <h3>Laura Martínez</h3>
+                <p class="trainer-bio">
+                  Especialista en entrenamiento funcional y rehabilitación. Con
+                  6 años de experiencia ayudando a personas a recuperar su
+                  movilidad y fuerza.
+                </p>
+
+                <div class="trainer-skills">
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Funcional</span>
+                      <span>92%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div
+                        class="skill-progress"
+                        style="--skill-percent: 92%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Rehabilitación</span>
+                      <span>95%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div
+                        class="skill-progress"
+                        style="--skill-percent: 95%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Movilidad</span>
+                      <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div
+                        class="skill-progress"
+                        style="--skill-percent: 90%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="trainer-rating">
+                  <div class="rating-stars">
+                    <span style="--rating-percent: 92%"></span>
+                  </div>
+                </div>
+
+                <div class="trainer-classes">
+                  <h4>Clases</h4>
+                  <ul>
+                    <li>Funcional</li>
+                    <li>Pilates</li>
+                    <li>Rehabilitación</li>
+                  </ul>
+                </div>
+
+                <div class="trainer-social">
+                  <a href="#" aria-label="Instagram de Laura">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="#" aria-label="Twitter de Laura">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="trainer-flip-card" tabindex="0">
+            <div class="trainer-flip-inner">
+              <div class="trainer-flip-front">
+                <div class="trainer-image">
+                  <img
+                    src="assets/images/trainers/trainer-cr.jpg"
+                    alt="Carlos Rodríguez"
+                  />
+                </div>
+                <div class="trainer-info">
+                  <h3>Carlos Rodríguez</h3>
+                  <p>Instructor de Spinning</p>
+                </div>
+              </div>
+              <div class="trainer-flip-back">
+                <h3>Carlos Rodríguez</h3>
+                <p class="trainer-bio">
+                  Apasionado del ciclismo y el spinning con 5 años de
+                  experiencia. Especializado en clases de alta intensidad con
+                  música motivadora.
+                </p>
+
+                <div class="trainer-skills">
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Resistencia</span>
+                      <span>96%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div
+                        class="skill-progress"
+                        style="--skill-percent: 96%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Motivación</span>
+                      <span>98%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div
+                        class="skill-progress"
+                        style="--skill-percent: 98%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Cardio</span>
+                      <span>95%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div
+                        class="skill-progress"
+                        style="--skill-percent: 95%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="trainer-rating">
+                  <div class="rating-stars">
+                    <span style="--rating-percent: 96%"></span>
+                  </div>
+                </div>
+
+                <div class="trainer-classes">
+                  <h4>Clases</h4>
+                  <ul>
+                    <li>Spinning</li>
+                    <li>Cardio</li>
+                    <li>HIIT</li>
+                  </ul>
+                </div>
+
+                <div class="trainer-social">
+                  <a href="#" aria-label="Instagram de Carlos">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="#" aria-label="Twitter de Carlos">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="trainer-flip-card" tabindex="0">
+            <div class="trainer-flip-inner">
+              <div class="trainer-flip-front">
+                <div class="trainer-image">
+                  <img
+                    src="assets/images/trainers/trainer-mg.jpg"
+                    alt="María García"
+                  />
+                </div>
+                <div class="trainer-info">
+                  <h3>María García</h3>
+                  <p>Instructora de Zumba</p>
+                </div>
+              </div>
+              <div class="trainer-flip-back">
+                <h3>María García</h3>
+                <p class="trainer-bio">
+                  Bailarina profesional e instructora de Zumba con 9 años de
+                  experiencia. Especializada en ritmos latinos y coreografías
+                  dinámicas.
+                </p>
+
+                <div class="trainer-skills">
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Baile</span>
+                      <span>99%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div
+                        class="skill-progress"
+                        style="--skill-percent: 99%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Coreografía</span>
+                      <span>97%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div
+                        class="skill-progress"
+                        style="--skill-percent: 97%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Energía</span>
+                      <span>98%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div
+                        class="skill-progress"
+                        style="--skill-percent: 98%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="trainer-rating">
+                  <div class="rating-stars">
+                    <span style="--rating-percent: 98%"></span>
+                  </div>
+                </div>
+
+                <div class="trainer-classes">
+                  <h4>Clases</h4>
+                  <ul>
+                    <li>Zumba</li>
+                    <li>Baile</li>
+                    <li>Cardio Dance</li>
+                  </ul>
+                </div>
+
+                <div class="trainer-social">
+                  <a href="#" aria-label="Instagram de María">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="#" aria-label="Twitter de María">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="specialties-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Nuestras Especialidades</h2>
+          <p>Áreas en las que nuestros entrenadores son expertos</p>
+        </div>
+
+        <div class="specialties-grid">
+          <div class="specialty-card">
+            <div class="specialty-icon">
+              <i class="fas fa-apple-alt fa-2x"></i>
+            </div>
+            <h3 class="specialty-title">Nutrición Deportiva</h3>
+            <p class="specialty-description">
+              Planes de alimentación personalizados para optimizar tu
+              rendimiento y alcanzar tus objetivos.
+            </p>
+          </div>
+
+          <div class="specialty-card">
+            <div class="specialty-icon">
+              <i class="fas fa-clipboard-list fa-2x"></i>
+            </div>
+            <h3 class="specialty-title">Planificación de Entrenamiento</h3>
+            <p class="specialty-description">
+              Programas de entrenamiento adaptados a tus necesidades, nivel y
+              objetivos específicos.
+            </p>
+          </div>
+          
+          <div class="specialty-card">
+            <div class="specialty-icon">
+              <i class="fas fa-heart fa-2x"></i>
+            </div>
+            <h3 class="specialty-title">Bienestar Mental</h3>
+            <p class="specialty-description">
+              Técnicas de meditación, manejo del estrés y mindfulness para un
+              equilibrio completo entre cuerpo y mente.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="certifications-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Certificaciones y Formación</h2>
+          <p>
+            Nuestros entrenadores cuentan con certificaciones de las mejores
+            instituciones
+          </p>
+        </div>
+
+        <div class="certifications-logos">
+          <img
+            src="assets/images/trainers/CrossFit_Certification.svg"
+            alt="CrossFit Certification"
+            class="certification-logo"
+          />
+          <img
+            src="assets/images/trainers/NASM.svg"
+            alt="NASM"
+            class="certification-logo"
+          />
+          <img
+            src="assets/images/trainers/ACE_Fitness.svg"
+            alt="ACE Fitness"
+            class="certification-logo"
+          />
+          <img
+            src="assets/images/trainers/Yoga_Alliance.svg"
+            alt="Yoga Alliance"
+            class="certification-logo"
+          />
+          <img
+            src="assets/images/trainers/ACSM.svg"
+            alt="ACSM"
+            class="certification-logo"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>¿Listo para entrenar con los mejores?</h2>
+          <p>
+            Agenda una sesión de evaluación gratuita con uno de nuestros
+            entrenadores
+          </p>
+          <a href="contacto.html" class="btn btn-primary">Reservar Ahora</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <div class="logo">
+              <h2>Fit<span>Life</span></h2>
+            </div>
+            <p>
+              Transformando vidas a través del fitness y el bienestar desde
+              2013.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h3>Enlaces Rápidos</h3>
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="clases.html">Clases</a></li>
+              <li><a href="entrenadores.html">Entrenadores</a></li>
+              <li><a href="precios.html">Precios</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>Contacto</h3>
+            <ul>
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Av. Libertad 1234, Ciudad</span>
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                <span>(123) 456-7890</span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <span>info@fitlife.com</span>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-newsletter">
+            <h3>Suscríbete a nuestro boletín</h3>
+            <p>Recibe noticias, consejos y promociones exclusivas.</p>
+            <form class="newsletter-form">
+              <input
+                type="email"
+                placeholder="Tu correo electrónico"
+                required
+              />
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.238389258939!2d-65.3058376849666!3d-24.18559038438163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f4e8bd5a9f9%3A0x3e8b5e1b899f4d3f!2sSan%20Salvador%20de%20Jujuy%2C%20Jujuy%2C%20Argentina!5e0!3m2!1sen!2sus!4v1627913386325!5m2!1sen!2sus"
+            width="100%"
+            height="250"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 FitLife. Todos los derechos reservados.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Política de Privacidad</a>
+            <a href="#">Términos y Condiciones</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js" type="module"></script>
+  </body>
+</html>

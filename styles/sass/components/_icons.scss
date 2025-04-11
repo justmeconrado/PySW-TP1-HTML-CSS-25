@@ -1,0 +1,122 @@
+// Estilos para iconos de FontAwesome
+.social-links {
+  display: flex;
+  gap: $spacing-md;
+
+  a {
+    @include flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: $color-white;
+    @include transition(all, $transition-fast);
+
+    i {
+      font-size: 1.2rem;
+    }
+
+    &:hover {
+      background-color: $color-primary;
+      transform: translateY(-3px);
+    }
+  }
+}
+
+.contact-icon {
+  margin-right: $spacing-md;
+  color: $color-primary;
+  flex-shrink: 0;
+
+  i {
+    font-size: 1.5rem;
+  }
+}
+
+.feature-icon {
+  margin-bottom: $spacing-md;
+  color: $color-primary;
+
+  i {
+    font-size: 2.5rem;
+  }
+}
+
+// Para el toggle de modo oscuro
+.sun-icon,
+.moon-icon {
+  position: absolute;
+  @include transition(all);
+}
+
+.sun-icon {
+  left: 5px;
+  color: #f39c12;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.moon-icon {
+  right: 5px;
+  color: #f1c40f;
+  transform: translateX(24px);
+  opacity: 0;
+}
+
+.dark-mode-toggle:checked + .dark-mode-label .sun-icon {
+  transform: translateX(-24px);
+  opacity: 0;
+}
+
+.dark-mode-toggle:checked + .dark-mode-label .moon-icon {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+// Iconos en tarjetas y elementos
+.trainer-social a i {
+  font-size: 1rem;
+}
+
+.blog-card-meta-item i,
+.comment-reactions i {
+  margin-right: 0.25rem;
+}
+
+.menu-icon i {
+  font-size: 1.5rem;
+}
+
+.class-item-meta i,
+.feature-item i {
+  margin-right: 0.5rem;
+  color: $color-primary;
+}
+
+.schedule-class i {
+  margin-left: 0.5rem;
+  color: $color-primary;
+}
+
+// Iconos en formularios
+.search-button i {
+  font-size: 1.2rem;
+}
+
+.form-submit i {
+  margin-left: 0.5rem;
+}
+
+// Iconos en testimonios
+.testimonial-rating i {
+  color: $color-accent;
+}
+
+// Iconos en pricing
+.check-icon i {
+  color: #28a745;
+}
+
+.x-icon i {
+  color: #dc3545;
+}

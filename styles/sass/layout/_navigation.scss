@@ -1,0 +1,336 @@
+/* ==========================================================================
+   NAVEGACIÓN PRINCIPAL
+   ========================================================================== */
+/**
+ * Contenedor principal de navegación
+ * - Diseño flexible para desktop
+ * - Transformación a menú móvil
+ */
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+/* ==========================================================================
+   MENÚ PRINCIPAL
+   ========================================================================== */
+.menu {
+  display: flex;
+  align-items: center;
+
+  // Versión móvil
+  @include respond-to(md) {
+    position: absolute;
+    top: 70px; // Debajo del header
+    left: 0;
+    width: 100%;
+    background-color: $color-white;
+    flex-direction: column; // Apila elementos
+    align-items: flex-start; // Alineación a la izquierda
+    padding: 0;
+    max-height: 0; // Inicialmente colapsado
+    overflow: hidden; // Oculta contenido
+    @include transition(max-height); // Animación suave
+    box-shadow: $shadow-md; // Sombra para efecto de elevación
+  }
+}
+
+/* Modo oscuro para menú móvil */
+.dark-mode .menu {
+  @include respond-to(md) {
+    background-color: $color-secondary;
+  }
+}
+
+/* Expande el menú al activar el toggle */
+.menu-toggle:checked ~ .menu {
+  max-height: 500px; // Altura suficiente para contenido
+}
+
+/* ==========================================================================
+   ITEMS DE MENÚ
+   ========================================================================== */
+.menu-item {
+  position: relative;
+  margin-left: $spacing-md; // Espaciado entre items
+
+  // Versión móvil
+  @include respond-to(md) {
+    width: 100%; // Ancho completo
+    margin: 0; // Sin margen
+  }
+
+  // Estilo de enlaces
+  a {
+    color: $color-dark;
+    font-family: $font-family-titles;
+    font-weight: $font-weight-normal;
+    font-size: 1.1rem;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $border-radius-md;
+    @include transition(all, $transition-fast);
+    letter-spacing: 1px;
+
+    // Versión móvil
+    @include respond-to(md) {
+      display: block; // Ocupa toda la línea
+      padding: $spacing-md;
+      border-bottom: 1px solid $color-gray-light; // Separador
+    }
+
+    // Efecto hover
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  // Estilo especial para botón CTA
+  &.cta-button a {
+    background-color: $color-primary;
+    color: $color-white;
+    padding: 0.5rem 1rem;
+    border-radius: $border-radius-md;
+
+    // Efecto hover para CTA
+    &:hover {
+      background-color: $color-primary-dark;
+      transform: translateY(-3px); // Efecto de levitación
+      box-shadow: $shadow-sm; // Sombra sutil
+    }
+  }
+}
+
+/* ==========================================================================
+   MEGA MENÚ
+   ========================================================================== */
+.has-submenu {
+  position: relative; // Contexto para posicionamiento absoluto
+}
+
+/* Contenedor del mega menú */
+.mega-menu {
+  position: absolute;
+  top: 100%; // Debajo del item padre
+  left: 0;
+  width: 800px; // Ancho generoso para contenido
+  background-color: $color-white;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-md; // Sombra para efecto de elevación
+  padding: $spacing-lg;
+  opacity: 0; // Inicialmente invisible
+  visibility: hidden; // Oculta de la interacción
+  transform: translateY(10px); // Efecto de aparición
+  @include transition(all); // Transición suave
+  z-index: $z-index-dropdown; // Asegura que esté por encima
+
+  // Ajustes para pantallas grandes
+  @include respond-to(lg) {
+    width: 600px; // Ancho reducido
+  }
+
+  // Versión móvil
+  @include respond-to(md) {
+    position: static; // Vuelve al flujo normal
+    width: 100%;
+    box-shadow: none;
+    padding: 0;
+    max-height: 0; // Colapsado inicialmente
+    overflow: hidden;
+    @include transition(max-height);
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}
+
+/* Modo oscuro para mega menú */
+.dark-mode .mega-menu {
+  background-color: $color-secondary;
+  border: 1px solid $color-gray-light;
+}
+
+/* Muestra el mega menú al hacer hover o foco */
+.has-submenu:hover .mega-menu,
+.has-submenu:focus-within .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+
+  // Versión móvil
+  @include respond-to(md) {
+    max-height: 1000px; // Altura suficiente para contenido
+  }
+}
+
+/* Contenido del mega menú */
+.mega-menu-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // 4 columnas
+  gap: $spacing-lg; // Espaciado entre columnas
+
+  // Ajustes para pantallas grandes
+  @include respond-to(lg) {
+    grid-template-columns: repeat(3, 1fr); // 3 columnas
+  }
+
+  // Versión móvil
+  @include respond-to(md) {
+    grid-template-columns: 1fr; // 1 columna
+    gap: 0; // Sin espacio entre elementos
+  }
+}
+
+/* Columnas del mega menú */
+.mega-menu-column {
+  // Versión móvil
+  @include respond-to(md) {
+    padding: $spacing-md;
+    border-bottom: 1px solid $color-gray-light; // Separador
+  }
+
+  // Títulos de columna
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: $spacing-md;
+    color: $color-primary; // Color destacado
+    font-weight: $font-weight-normal;
+  }
+
+  // Items de lista
+  ul li {
+    margin-bottom: $spacing-sm;
+
+    a {
+      color: $color-dark;
+      font-family: $font-family;
+      font-weight: $font-weight-normal;
+      font-size: 0.95rem;
+      @include transition(all, $transition-fast);
+      padding: 0;
+      letter-spacing: normal;
+      text-transform: none;
+
+      // Efecto hover
+      &:hover {
+        color: $color-primary;
+        padding-left: $spacing-sm; // Desplazamiento sutil
+      }
+    }
+  }
+}
+
+/* Imagen del mega menú */
+.mega-menu-image {
+  grid-column: 4; // Última columna
+  grid-row: 1; // Primera fila
+
+  // Oculta en pantallas grandes
+  @include respond-to(lg) {
+    display: none;
+  }
+
+  // Estilo de imagen
+  img {
+    border-radius: $border-radius-md;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Ajuste de imagen
+  }
+}
+
+/* ==========================================================================
+   MENÚ MÓVIL (TOGGLE)
+   ========================================================================== */
+.menu-toggle {
+  display: none; // Oculta el checkbox
+}
+
+/* Icono de hamburguesa */
+.menu-icon {
+  display: none; // Oculta por defecto
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+
+  // Solo visible en móviles
+  @include respond-to(md) {
+    display: flex;
+  }
+
+  // Barras del icono
+  span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: $color-dark;
+    border-radius: 3px;
+    @include transition(all, $transition-fast);
+  }
+}
+
+/* ==========================================================================
+   TOGGLE DE MODO OSCURO
+   ========================================================================== */
+.theme-toggle {
+  margin-left: $spacing-md; // Espaciado del menú
+}
+
+/* Checkbox oculto */
+.dark-mode-toggle {
+  display: none;
+}
+
+/* Estilo visual del toggle */
+.dark-mode-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 26px;
+  background-color: $color-gray-light;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  @include transition(all);
+}
+
+/* Estado activo del toggle */
+.dark-mode-toggle:checked + .dark-mode-label {
+  background-color: $color-secondary-dark;
+}
+
+/* Iconos del toggle */
+.sun-icon,
+.moon-icon {
+  position: absolute;
+  @include transition(all);
+}
+
+/* Icono de sol (modo claro) */
+.sun-icon {
+  left: 5px;
+  color: #f39c12;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Icono de luna (modo oscuro) */
+.moon-icon {
+  right: 5px;
+  color: #f1c40f;
+  transform: translateX(24px);
+  opacity: 0;
+}
+
+/* Animación al activar modo oscuro */
+.dark-mode-toggle:checked + .dark-mode-label .sun-icon {
+  transform: translateX(-24px);
+  opacity: 0;
+}
+
+.dark-mode-toggle:checked + .dark-mode-label .moon-icon {
+  transform: translateX(0);
+  opacity: 1;
+}

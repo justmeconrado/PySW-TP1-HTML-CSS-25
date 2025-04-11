@@ -1,0 +1,168 @@
+/* ==========================================================================
+   CARRUSEL DE TESTIMONIOS
+   ========================================================================== */
+/**
+ * Componente interactivo para mostrar testimonios en rotación
+ * - Navegación por puntos circulares
+ * - Transiciones suaves entre slides
+ * - Diseño adaptable (responsive)
+ * - Sin dependencias de JavaScript (solo CSS)
+ */
+
+.testimonial-carousel {
+  position: relative; // Contexto de posicionamiento
+  max-width: 800px; // Ancho máximo del componente
+  margin: 0 auto; // Centrado horizontal
+
+  /* Oculta los inputs radio que controlan la navegación */
+  input {
+    display: none;
+  }
+
+  /* ==========================================================================
+     CONTROLES DE NAVEGACIÓN (PUNTOS)
+     ========================================================================== */
+  .testimonial-controls {
+    @include flex; // Centrado con mixin flex
+    margin-bottom: $spacing-lg; // Espaciado inferior
+
+    /* Estilo de los puntos de navegación */
+    label {
+      width: 12px; // Tamaño fijo
+      height: 12px;
+      border-radius: 50%; // Forma circular
+      background-color: $color-gray-light; // Color inactivo
+      margin: 0 $spacing-sm; // Espaciado horizontal
+      cursor: pointer; // Cursor tipo pointer
+      @include transition(
+        background-color,
+        $transition-fast
+      ); // Transición suave
+
+      /* Efecto hover en los puntos */
+      &:hover {
+        background-color: $color-gray; // Color gris al pasar mouse
+      }
+    }
+  }
+
+  /* Cambia color del punto activo según testimonio seleccionado */
+  #testimonial-1:checked ~ .testimonial-controls label:nth-child(1),
+  #testimonial-2:checked ~ .testimonial-controls label:nth-child(2),
+  #testimonial-3:checked ~ .testimonial-controls label:nth-child(3) {
+    background-color: $color-primary; // Color primario para activo
+  }
+
+  /* ==========================================================================
+     CONTENEDOR DE SLIDES
+     ========================================================================== */
+  .testimonial-slides {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    
+    .testimonial-slide {
+      min-width: 100%;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
+  }
+  
+  // Show the selected testimonial
+  #testimonial-1:checked ~ .testimonial-slides .testimonial-slide:nth-child(1),
+  #testimonial-2:checked ~ .testimonial-slides .testimonial-slide:nth-child(2),
+  #testimonial-3:checked ~ .testimonial-slides .testimonial-slide:nth-child(3) {
+    opacity: 1;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Estilo base para cada slide (testimonio) */
+  .testimonial-slide {
+    opacity: 0; // Inicialmente invisible
+    position: absolute; // Posicionamiento absoluto
+    width: 100%; // Ancho completo
+    @include transition(opacity); // Transición suave para fade
+  }
+
+  /* Muestra el slide activo según input seleccionado */
+  #testimonial-1:checked ~ .testimonial-slides .testimonial-slide:nth-child(1),
+  #testimonial-2:checked ~ .testimonial-slides .testimonial-slide:nth-child(2),
+  #testimonial-3:checked ~ .testimonial-slides .testimonial-slide:nth-child(3) {
+    opacity: 1; // Visible
+    position: relative; // Vuelve al flujo normal
+  }
+
+  /* ==========================================================================
+     CONTENIDO DEL TESTIMONIO
+     ========================================================================== */
+  .testimonial-content {
+    display: flex; // Layout flexible
+    background-color: $color-white; // Fondo blanco
+    border-radius: $border-radius-md; // Bordes redondeados
+    padding: $spacing-xl; // Espaciado interno grande
+    box-shadow: $shadow-sm; // Sombra ligera
+
+  }
+
+  /* ==========================================================================
+     IMAGEN DEL TESTIMONIO
+     ========================================================================== */
+  .testimonial-image {
+    flex-shrink: 0; // Evita que la imagen se reduzca
+    width: 100px; // Tamaño fijo
+    height: 100px;
+    border-radius: 50%; // Forma circular
+    overflow: hidden; // Oculta esquinas de la imagen
+    margin-right: $spacing-lg; // Espaciado derecho
+
+    /* Estilo de la imagen */
+    img {
+      width: 100%; // Ancho completo
+      height: 100%; // Altura completa
+      object-fit: cover; // Ajuste de imagen
+    }
+  }
+
+  /* ==========================================================================
+     TEXTO DEL TESTIMONIO
+     ========================================================================== */
+  .testimonial-text {
+    flex-grow: 1; // Ocupa espacio disponible
+  }
+
+  /* Estrellas de valoración */
+  .testimonial-rating {
+    color: $color-accent; // Color amarillo de acento
+    margin-bottom: $spacing-sm; // Espaciado inferior
+    font-size: 1.2rem; // Tamaño aumentado
+  }
+
+  /* Cita del testimonio */
+  .testimonial-text p {
+    margin-bottom: $spacing-md; // Espaciado inferior
+    font-style: italic; // Texto en cursiva
+    font-family: $font-family; // Fuente principal
+  }
+
+  /* ==========================================================================
+     INFORMACIÓN DEL AUTOR
+     ========================================================================== */
+  .testimonial-author h4 {
+    font-weight: $font-weight-normal; // Peso normal
+    margin-bottom: 0; // Sin margen inferior
+    font-size: 1.4rem; // Tamaño aumentado
+  }
+
+  /* Detalles del autor (cargo/empresa) */
+  .testimonial-author span {
+    font-size: 0.875rem; // Tamaño pequeño
+    color: $color-gray; // Color secundario
+    font-family: $font-family; // Fuente principal
+    text-transform: none; // Sin transformación de texto
+    letter-spacing: normal; // Espaciado normal
+  }
+}

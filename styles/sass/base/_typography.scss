@@ -1,0 +1,92 @@
+/* ==========================================================================
+   ESTILOS BASE DEL BODY
+   ========================================================================== */
+/* Define los estilos tipográficos base para toda la página */
+body {
+  font-family: $font-family; /* Familia tipográfica principal definida por variable */
+  font-size: $font-size-base; /* Tamaño de fuente base definido por variable */
+  line-height: 1.6; /* Interlineado para mejor legibilidad */
+  color: $color-dark; /* Color de texto principal definido por variable */
+}
+
+/* ==========================================================================
+   ESTILOS PARA ENCABEZADOS
+   ========================================================================== */
+/* Estilos consistentes para todos los niveles de encabezados (h1-h6) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-titles; /* Familia tipográfica especial para títulos */
+  text-transform: uppercase; /* Convierte texto a mayúsculas */
+  letter-spacing: 1px; /* Espaciado entre letras para mejor legibilidad */
+  line-height: 1.2; /* Interlineado más ajustado para títulos */
+}
+
+/* ==========================================================================
+   ESTILOS PARA CABECERAS DE SECCIÓN
+   ========================================================================== */
+/* Clase para encabezados de sección con estilo centrado y decoración */
+.section-header {
+  text-align: center; /* Centra el contenido */
+  margin-bottom: $spacing-xl; /* Margen inferior grande (definido por variable) */
+
+  /* Estilos específicos para el título h2 dentro de section-header */
+  h2 {
+    font-size: 3rem; /* Tamaño de fuente grande */
+    font-weight: $font-weight-normal; /* Peso de fuente normal (definido por variable) */
+    margin-bottom: $spacing-sm; /* Margen inferior pequeño */
+    position: relative; /* Posicionamiento relativo para el pseudo-elemento */
+    display: inline-block; /* Permite que el ancho se ajuste al contenido */
+
+    /* Línea decorativa bajo el título */
+    &::after {
+      content: ""; /* Contenido vacío para el pseudo-elemento */
+      position: absolute; /* Posicionamiento absoluto respecto al h2 */
+      bottom: -10px; /* Posición 10px debajo del texto */
+      left: 50%; /* Centrado horizontalmente */
+      transform: translateX(-50%); /* Ajuste fino para centrado perfecto */
+      width: 80px; /* Ancho de la línea decorativa */
+      height: 3px; /* Grosor de la línea */
+      background-color: $color-primary; /* Color primario definido por variable */
+    }
+  }
+
+  /* Estilos para el párrafo descriptivo bajo el título */
+  p {
+    color: $color-gray; /* Color de texto secundario */
+    font-size: 1.1rem; /* Tamaño de fuente ligeramente aumentado */
+    font-family: $font-family; /* Vuelve a la fuente principal */
+    text-transform: none; /* Anula mayúsculas */
+    letter-spacing: normal; /* Espaciado de letras normal */
+  }
+}
+
+/* ==========================================================================
+   ESTILOS PARA TÍTULOS HERO (PRINCIPALES)
+   ========================================================================== */
+/* Clase para el título principal hero de la página */
+.hero-title {
+  font-size: 4.5rem; /* Tamaño de fuente muy grande */
+  font-weight: $font-weight-normal; /* Peso de fuente normal */
+  margin-bottom: $spacing-md; /* Margen inferior mediano */
+  line-height: 1.1; /* Interlineado muy ajustado */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 3px; /* Espaciado de letras aumentado */
+}
+
+/* ==========================================================================
+   ESTILOS PARA SUBTÍTULOS HERO
+   ========================================================================== */
+/* Clase para el subtítulo bajo el hero title */
+.hero-subtitle {
+  font-size: 1.5rem; /* Tamaño de fuente aumentado */
+  margin-bottom: $spacing-xl; /* Margen inferior extra grande */
+  font-weight: $font-weight-light; /* Peso de fuente ligero */
+  font-family: $font-family; /* Usa la fuente principal */
+  text-transform: none; /* Texto en formato normal (no mayúsculas) */
+  letter-spacing: normal; /* Espaciado de letras normal */
+
+}

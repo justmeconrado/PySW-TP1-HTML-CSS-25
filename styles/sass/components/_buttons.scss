@@ -1,0 +1,112 @@
+/* ==========================================================================
+   CLASE BASE .BTN (ESTILOS COMUNES PARA TODOS LOS BOTONES)
+   ========================================================================== */
+/**
+ * Define los estilos base que comparten todos los botones del sistema
+ * - Diseño inline-block para control de padding
+ * - Tipografía especial para botones
+ * - Transiciones suaves para interacciones
+ * - Estilo de texto en mayúsculas
+ */
+.btn {
+  display: inline-block; /* Permite padding pero mantiene en línea */
+  padding: 0.75rem 1.5rem; /* Espaciado interno vertical/horizontal */
+  border-radius: $border-radius-md; /* Bordes redondeados (valor del sistema) */
+  font-family: $font-family-titles; /* Fuente especial para botones */
+  font-weight: $font-weight-normal; /* Peso de fuente normal (400) */
+  text-align: center; /* Texto centrado */
+  cursor: pointer; /* Cursor tipo pointer para indicar click */
+  @include transition(
+    all,
+    $transition-fast
+  ); /* Transición suave en todos los cambios */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  font-size: 1rem; /* Tamaño de fuente base */
+}
+
+/* ==========================================================================
+   VARIANTE .BTN-PRIMARY (BOTÓN PRIMARIO)
+   ========================================================================== */
+/**
+ * Estilo principal para acciones primarias
+ * - Color de fondo y borde primario
+ * - Texto blanco para contraste
+ * - Efecto hover con sombra y movimiento
+ */
+.btn-primary {
+  background-color: $color-primary; /* Color primario de la marca */
+  color: $color-white; /* Texto blanco */
+  border: 2px solid $color-primary; /* Borde del mismo color que fondo */
+
+  /* Efectos al pasar el mouse */
+  &:hover {
+    background-color: $color-primary-dark; /* Versión oscura del color primario */
+    border-color: $color-primary-dark; /* Borde oscuro para coincidir */
+    color: $color-white; /* Mantiene texto blanco */
+    transform: translateY(-3px); /* Efecto de levitación */
+    box-shadow: $shadow-md; /* Sombra media del sistema */
+  }
+}
+
+/* ==========================================================================
+   VARIANTE .BTN-SECONDARY (BOTÓN SECUNDARIO)
+   ========================================================================== */
+/**
+ * Estilo para acciones secundarias
+ * - Fondo transparente con borde blanco
+ * - Cambio de colores al hacer hover
+ */
+.btn-secondary {
+  background-color: transparent; /* Fondo transparente */
+  color: $color-white; /* Texto blanco */
+  border: 2px solid $color-white; /* Borde blanco */
+
+  &:hover {
+    background-color: $color-white; /* Fondo blanco al pasar mouse */
+    color: $color-primary; /* Texto color primario */
+    transform: translateY(-3px); /* Efecto de levitación */
+    box-shadow: $shadow-md; /* Sombra media */
+  }
+}
+
+/* ==========================================================================
+   VARIANTE .BTN-ACCENT (BOTÓN DE ACENTO)
+   ========================================================================== */
+/**
+ * Botón para acciones destacadas o especiales
+ * - Usa el color de acento de la marca
+ * - Texto oscuro para contraste
+ */
+.btn-accent {
+  background-color: $color-accent; /* Color amarillo de acento */
+  color: $color-dark; /* Texto oscuro para contraste */
+  border: 2px solid $color-accent; /* Borde del mismo color */
+
+  &:hover {
+    background-color: darken($color-accent, 5%); /* Acenta un 5% más oscuro */
+    border-color: darken($color-accent, 5%); /* Borde igual que fondo */
+    transform: translateY(-3px); /* Efecto de levitación */
+    box-shadow: $shadow-md; /* Sombra media */
+  }
+}
+
+/* ==========================================================================
+   VARIANTE .BTN-OUTLINE (BOTÓN CON BORDE)
+   ========================================================================== */
+/**
+ * Versión minimalista del botón secundario
+ * - Similar al secondary pero sin sombra en hover
+ * - Para usos donde se necesita menos énfasis
+ */
+.btn-outline {
+  background-color: transparent; /* Fondo transparente */
+  color: $color-white; /* Texto blanco */
+  border: 2px solid $color-white; /* Borde blanco */
+
+  &:hover {
+    background-color: $color-white; /* Fondo blanco al pasar mouse */
+    color: $color-primary; /* Texto color primario */
+    transform: translateY(-3px); /* Solo efecto de levitación */
+  }
+}

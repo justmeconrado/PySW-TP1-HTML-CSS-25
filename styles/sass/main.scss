@@ -1,0 +1,57 @@
+/* ==========================================================================
+   ESTRUCTURA PRINCIPAL DE ARCHIVOS SCSS
+   ========================================================================== */
+/**
+ * Sistema de organización Sass (7-1 pattern) con:
+ * - Importaciones jerárquicas
+ * - Separación lógica de responsabilidades
+ * - Escalabilidad para proyectos grandes
+ */
+
+// 1. ABSTRACTOS
+// ----------------------------------------------
+// Utilidades globales (no generan CSS por sí solos)
+@import "abstracts/variables"; // Variables globales (colores, tamaños)
+@import "abstracts/functions"; // Funciones Sass personalizadas
+@import "abstracts/mixins"; // Mixins reutilizables (media queries, etc)
+
+// 2. BASE
+// ----------------------------------------------
+// Estilos fundamentales y reset
+@import "base/reset"; // Normalización
+@import "base/base"; // Estilos base (body, tipografía)
+@import "base/typography"; // Jerarquía tipográfica
+@import "base/animations"; // Animaciones clave (@keyframes)
+
+// 3. COMPONENTES
+// ----------------------------------------------
+// Elementos UI reutilizables
+@import "components/buttons"; // Estilos de botones y estados
+@import "components/cards"; // Tarjetas (productos, servicios)
+@import "components/carousel"; // Sliders y carruseles
+@import "components/forms"; // Campos de formulario, validaciones
+@import "components/icons"; // Iconos y SVGs personalizados
+
+// 4. LAYOUT
+// ----------------------------------------------
+// Estructuras maestras
+@import "layout/header"; // Cabecera y navegación principal
+@import "layout/navigation"; // Menús y sistemas de navegación
+@import "layout/footer"; // Pie de página y sub-navegación
+@import "layout/grid"; // Sistema de rejilla personalizado
+@import "layout/hero"; // Secciones hero/banners principales
+
+// 5. PÁGINAS
+// ----------------------------------------------
+// Estilos específicos por vista
+@import "pages/home"; // Estilos únicos de la homepage
+@import "pages/classes"; // Página de clases/cursos
+@import "pages/trainers"; // Página de entrenadores/equipo
+@import "pages/blog"; // Estilos de blog/artículos
+@import "pages/contact"; // Formulario de contacto
+@import "pages/pricing"; // Tablas de precios/planes
+
+// 6. TEMAS
+// ----------------------------------------------
+// Variantes de diseño (modo oscuro, etc)
+@import 'themes/dark'; // Sobrescrituras para modo oscuro

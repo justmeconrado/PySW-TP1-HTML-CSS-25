@@ -1,0 +1,193 @@
+/* ==========================================================================
+   SECCIONES PRINCIPALES - ESTRUCTURA OPTIMIZADA
+   ========================================================================== */
+/**
+ * Sistema modular para secciones con:
+ * - Estructura consistente de espaciado
+ * - Configuración centralizada
+ * - Adaptación al modo oscuro
+ * - Documentación clara
+ */
+
+/* ==================== 1. CONFIGURACIÓN BASE ==================== */
+$section-padding: $spacing-xxl 0;
+$container-padding: $spacing-xl 0;
+$max-width: 1024px;
+$cta-overlay-dark: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
+$cta-overlay-light: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+
+@mixin section-container {
+  padding: $container-padding;
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   SECCIÓN DE CARACTERÍSTICAS (FEATURES)
+   ========================================================================== */
+.features {
+  padding: $spacing-xxl 0;
+  background-color: $color-light;
+  .container {
+    padding: $spacing-xl 0;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}
+
+/* ==========================================================================
+   SECCIÓN DE CLASES
+   ========================================================================== */
+.classes {
+  padding: $spacing-xxl 0;
+  .container {
+    padding: $spacing-xl 0;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+  .classes-cta {
+    text-align: center;
+    margin-top: $spacing-xl;
+  }
+}
+
+/* ==========================================================================
+   SECCIÓN DE ESTADÍSTICAS
+   ========================================================================== */
+.stats {
+  padding: $spacing-xxl 0;
+  background-color: $color-primary;
+  color: $color-white;
+  .container {
+    padding: $spacing-xl 0;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  .stat-number {
+    font-size: 4rem;
+    font-weight: $font-weight-normal;
+    margin-bottom: $spacing-sm;
+    position: relative;
+    font-family: $font-family-titles;
+
+    // Remove responsive styles
+    // @include respond-to(sm) {
+    //   font-size: 3rem;
+    // }
+
+    &::after {
+      content: "+";
+      font-size: 2.5rem;
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  .stat-label {
+    font-size: 1.4rem;
+    font-weight: $font-weight-normal;
+    font-family: $font-family-titles;
+    letter-spacing: 1px;
+
+    // Remove responsive styles
+    // @include respond-to(sm) {
+    //   font-size: 1.2rem;
+    // }
+  }
+}
+
+/* ==========================================================================
+   SECCIÓN DE TESTIMONIOS
+   ========================================================================== */
+/**
+ * Muestra opiniones de clientes/usuarios
+ * - Fondo claro para mejor legibilidad
+ * - Espaciado consistente con otras secciones
+ */
+.testimonials {
+  .container {
+    padding: $spacing-xl 0; // Espaciado vertical grande
+    max-width: 1024px; // Ancho máximo para contenido
+    margin: 0 auto; // Centrado horizontal
+  }
+  padding: $spacing-xxl 0; // Espaciado vertical extra grande
+  background-color: $color-light; // Fondo gris claro
+}
+
+/* ==========================================================================
+   SECCIÓN PREVIA DE ENTRENADORES
+   ========================================================================== */
+/**
+ * Vista previa del equipo de entrenadores
+ * - Diseño similar a sección de clases
+ * - Llamada a la acción centrada
+ */
+.trainers-preview {
+  padding: $spacing-xxl 0; // Espaciado vertical extra grande
+  .container {
+    padding: $spacing-xl 0; // Espaciado vertical grande
+    max-width: 1024px; // Ancho máximo para contenido
+    margin: 0 auto; // Centrado horizontal
+  }
+
+  // Contenedor de llamada a la acción
+  .trainers-cta {
+    text-align: center; // Centrado horizontal
+    margin-top: $spacing-xl; // Espaciado superior grande
+  }
+}
+
+/* ==========================================================================
+   SECCIÓN DE LLAMADA A LA ACCIÓN (CTA)
+   ========================================================================== */
+/**
+ * Sección destacada para conversión
+ * - Imagen de fondo con overlay oscuro
+ * - Texto centrado y legible
+ * - Diseño impactante
+ */
+.cta {
+  padding: $spacing-xxl 0; // Espaciado vertical extra grande
+  // Fondo con imagen y overlay oscuro
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("/placeholder.svg?height=600&width=1200") center / cover no-repeat;
+  color: $color-white; // Texto blanco
+  text-align: center; // Contenido centrado
+  .container {
+    padding: $spacing-xl 0; // Espaciado vertical grande
+    max-width: 1024px; // Ancho máximo para contenido
+    margin: 0 auto; // Centrado horizontal
+  }
+  // Contenedor de contenido
+  .cta-content {
+    max-width: 700px; // Ancho máximo para legibilidad
+    margin: 0 auto; // Centrado horizontal
+
+    // Título principal
+    h2 {
+      font-size: 3.5rem; // Tamaño muy grande
+      margin-bottom: $spacing-md; // Espaciado inferior
+      font-weight: $font-weight-normal;
+    }
+
+    // Texto descriptivo
+    p {
+      font-size: 1.2rem; // Tamaño aumentado
+      margin-bottom: $spacing-xl; // Espaciado inferior grande
+      font-family: $font-family; // Fuente principal
+    }
+  }
+}
+
+/* ==========================================================================
+   ESTILOS PARA MODO OSCURO
+   ========================================================================== */
+/**
+ * Ajustes específicos para el modo oscuro
+ * - Overlay más oscuro para mejor contraste
+ */
+.dark-mode .cta {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
+    url("/placeholder.svg?height=600&width=1200") center / cover no-repeat;
+}

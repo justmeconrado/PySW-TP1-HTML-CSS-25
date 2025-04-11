@@ -1,0 +1,205 @@
+/* ==========================================================================
+   FILTROS Y CLASES
+   ========================================================================== */
+/**
+ * Sistema de filtrado y visualización de clases
+ * 
+ * Estructura:
+ * 1. Contenedores principales
+ * 2. Componentes de filtrado
+ * 3. Tarjetas de clases (estilo masonry)
+ * 4. Tabla de horarios
+ */
+
+/* ==================== 1. CONTENEDORES PRINCIPALES ==================== */
+.filter-container,
+.schedule-section {
+  .container {
+    max-width: 1024px;
+    margin: 0 auto;
+    text-align: center;
+    padding: $spacing-xl 0;
+  }
+}
+
+.filter-container {
+  background-color: $color-light;
+}
+
+.schedule-section {
+  padding: $spacing-xxl 0;
+}
+
+/* ==================== 2. COMPONENTES DE FILTRADO ==================== */
+.filter-controls {
+  @include flex;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+  margin-bottom: $spacing-xl;
+}
+
+.filter-control {
+  display: none;
+}
+
+.filter-label {
+  padding: 0.5rem 1rem;
+  border-radius: $border-radius-md;
+  background-color: $color-white;
+  cursor: pointer;
+  @include transition(all, $transition-fast);
+
+  .filter-control:checked + & {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+}
+
+/* ==================== 3. TARJETAS DE CLASES ==================== */
+.class-item {
+  grid-row-end: span 30;
+  border-radius: $border-radius-md;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+  @include transition(all);
+  background-color: $color-white;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity $transition-normal, transform $transition-normal;
+  position: relative;
+  height: 400px;
+
+  &.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    position: absolute;
+    z-index: -1;
+  }
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: $shadow-md;
+  }
+}
+
+.class-item-image {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @include transition(transform);
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);
+    z-index: 1;
+  }
+}
+
+.class-item:hover .class-item-image img {
+  transform: scale(1.1);
+}
+
+.class-item-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: $spacing-lg;
+  z-index: 2;
+  color: white;
+
+  h3 {
+    margin-bottom: $spacing-sm;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  }
+
+  p {
+    color: rgba(255,255,255,0.9);
+    margin-bottom: $spacing-md;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  }
+}
+
+.class-item-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.8);
+}
+
+.class-item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+  margin-top: $spacing-sm;
+}
+
+.class-item-tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: $border-radius-sm;
+  background-color: rgba(255,255,255,0.2);
+  color: white;
+  
+  &:hover {
+    background-color: $color-primary;
+  }
+}
+
+/* ==================== 4. TABLA DE HORARIOS ==================== */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: $spacing-xl;
+  background-color: $color-white;
+  border-radius: $border-radius-md;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+
+  @include respond-to(md) {
+    display: block;
+    overflow-x: auto;
+  }
+
+  th, td {
+    padding: $spacing-md;
+    text-align: center;
+    border: 1px solid $color-gray-light;
+  }
+
+  th {
+    background-color: $color-primary;
+    color: $color-white;
+    font-weight: $font-weight-medium;
+  }
+
+  tr:nth-child(even) {
+    background-color: $color-light;
+  }
+}
+
+.schedule-class {
+  font-weight: $font-weight-medium;
+}
+
+.schedule-time {
+  font-size: 0.875rem;
+  color: $color-gray;
+}
+
+.schedule-instructor {
+  font-size: 0.875rem;
+  color: $color-primary;
+}

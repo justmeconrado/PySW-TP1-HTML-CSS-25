@@ -1,0 +1,198 @@
+/* ==========================================================================
+   FOOTER PRINCIPAL
+   ========================================================================== */
+/**
+ * Componente de pie de página con múltiples secciones
+ * - Diseño responsive con CSS Grid
+ * - Estilos para modo oscuro
+ * - Varias secciones de contenido
+ */
+.footer {
+  background-color: $color-secondary-dark; // Fondo oscuro
+  color: $color-white; // Texto blanco
+  padding-top: $spacing-xxl; // Espaciado superior extra grande
+
+  /* ==========================================================================
+     LAYOUT CON CSS GRID
+     ========================================================================== */
+  .footer-grid {
+    @include grid(repeat(auto-fit, minmax(250px, 1fr)), $spacing-xl);
+    margin-bottom: $spacing-xl; // Espaciado inferior grande
+  }
+
+  /* ==========================================================================
+     SECCIÓN "ACERCA DE"
+     ========================================================================== */
+  .footer-about {
+    p {
+      margin-bottom: $spacing-md; // Espaciado entre párrafos
+      font-family: $font-family; // Fuente principal
+    }
+  }
+
+  /* ==========================================================================
+     ENLACES SOCIALES
+     ========================================================================== */
+  .social-links {
+    display: flex; // Disposición en línea
+    gap: $spacing-md; // Espacio entre iconos
+
+    a {
+      @include flex; // Centrado con mixin
+      width: 40px; // Tamaño fijo
+      height: 40px;
+      border-radius: 50%; // Forma circular
+      background-color: rgba(255, 255, 255, 0.1); // Fondo semitransparente
+      color: $color-white; // Iconos blancos
+      @include transition(all, $transition-fast); // Transición suave
+
+      // Efecto hover
+      &:hover {
+        background-color: $color-primary; // Fondo color primario
+        transform: translateY(-3px); // Efecto de levitación
+      }
+    }
+  }
+
+  /* ==========================================================================
+     TÍTULOS DE SECCIÓN
+     ========================================================================== */
+  h3 {
+    font-size: 1.4rem; // Tamaño aumentado
+    margin-bottom: $spacing-lg; // Espaciado inferior
+    position: relative; // Para pseudo-elemento
+    padding-bottom: $spacing-sm; // Espacio para línea decorativa
+    font-weight: $font-weight-normal; // Peso normal
+
+    // Línea decorativa inferior
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: $color-primary; // Color primario
+    }
+  }
+
+  /* ==========================================================================
+     ENLACES RÁPIDOS
+     ========================================================================== */
+  .footer-links {
+    ul li {
+      margin-bottom: $spacing-sm; // Espaciado entre ítems
+
+      a {
+        color: $color-gray; // Color gris para enlaces
+        @include transition(all, $transition-fast); // Transición suave
+        font-family: $font-family; // Fuente principal
+
+        // Efecto hover
+        &:hover {
+          color: $color-primary; // Color primario
+          padding-left: $spacing-sm; // Desplazamiento a la derecha
+        }
+      }
+    }
+  }
+
+  /* ==========================================================================
+     INFORMACIÓN DE CONTACTO
+     ========================================================================== */
+  .footer-contact {
+    ul li {
+      display: flex; // Disposición en línea
+      align-items: center; // Centrado vertical
+      margin-bottom: $spacing-md; // Espaciado entre ítems
+      color: $color-gray; // Color gris
+      font-family: $font-family; // Fuente principal
+
+      // Iconos
+      svg {
+        margin-right: $spacing-sm; // Espaciado derecho
+        color: $color-primary; // Color primario
+      }
+    }
+  }
+
+  /* ==========================================================================
+     MAPA INTEGRADO
+     ========================================================================== */
+  .footer-map {
+    margin-bottom: $spacing-xl; // Espaciado inferior
+    border-radius: $border-radius-md; // Bordes redondeados
+    overflow: hidden; // Oculta esquinas del mapa
+  }
+
+  /* ==========================================================================
+     SECCIÓN INFERIOR (COPYRIGHT + ENLACES)
+     ========================================================================== */
+  .footer-bottom {
+    padding: $spacing-lg 0; // Espaciado interno
+    border-top: 1px solid rgba(255, 255, 255, 0.1); // Borde sutil
+    display: flex; // Disposición flexible
+    justify-content: space-between; // Elementos a los extremos
+    align-items: center; // Centrado vertical
+    flex-wrap: wrap; // Ajuste en pantallas pequeñas
+    gap: $spacing-md; // Espacio entre elementos
+
+    // Versión para móviles
+    @include respond-to(md) {
+      flex-direction: column; // Apila elementos
+      text-align: center; // Texto centrado
+    }
+
+    p {
+      font-family: $font-family; // Fuente principal
+    }
+  }
+
+  // Enlaces del footer inferior
+  .footer-bottom-links {
+    display: flex; // Disposición en línea
+    gap: $spacing-lg; // Espacio entre enlaces
+
+    // Centrado en móviles
+    @include respond-to(md) {
+      justify-content: center;
+    }
+
+    a {
+      color: $color-gray; // Color gris
+      font-family: $font-family; // Fuente principal
+
+      // Efecto hover
+      &:hover {
+        color: $color-primary; // Color primario
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   ESTILOS PARA MODO OSCURO
+   ========================================================================== */
+.dark-mode .footer {
+  background-color: #0a0a0a; // Fondo más oscuro
+}
+
+// Ajustes de color para texto en modo oscuro
+.dark-mode .footer p,
+.dark-mode .footer h3,
+.dark-mode .footer-contact ul li,
+.dark-mode .footer-bottom p {
+  color: #eaeaea; // Texto claro
+}
+
+// Ajustes para enlaces en modo oscuro
+.dark-mode .footer-links ul li a,
+.dark-mode .footer-bottom-links a {
+  color: #b0b0b0; // Gris claro
+}
+
+// Efecto hover en modo oscuro
+.dark-mode .footer-links ul li a:hover,
+.dark-mode .footer-bottom-links a:hover {
+  color: $color-primary; // Color primario (consistente)
+}

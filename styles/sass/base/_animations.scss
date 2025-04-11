@@ -1,0 +1,89 @@
+/* ==========================================================================
+   ANIMACIÓN: FADE IN (APARECER CON DESPLAZAMIENTO)
+   ========================================================================== */
+/**
+ * Animación para elementos que aparecen desplazándose desde abajo
+ * - Efecto suave de aparición
+ * - Movimiento vertical sutil
+ * - Uso típico: elementos que entran en la vista
+ */
+@keyframes fadeIn {
+  from {
+    opacity: 0; // Inicia invisible
+    transform: translateY(20px); // Desplazado 20px hacia abajo
+  }
+  to {
+    opacity: 1; // Termina completamente visible
+    transform: translateY(0); // Vuelve a su posición original
+  }
+}
+
+/* ==========================================================================
+   ANIMACIÓN: FADE IN UP (APARECER DESPLAZÁNDOSE HACIA ARRIBA)
+   ========================================================================== */
+/**
+ * Similar a fadeIn pero con nombre semántico alternativo
+ * - Mantenido por compatibilidad
+ * - Puede ser usado para casos específicos
+ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   ANIMACIÓN: PULSE (LATIDO)
+   ========================================================================== */
+/**
+ * Efecto de pulsación sutil
+ * - Escala ligeramente el elemento
+ * - Uso típico: llamadas a la acción, elementos importantes
+ */
+@keyframes pulse {
+  0% {
+    transform: scale(1); // Tamaño normal
+  }
+  50% {
+    transform: scale(1.05); // Escala un 5% más grande
+  }
+  100% {
+    transform: scale(1); // Vuelve al tamaño normal
+  }
+}
+
+/* ==========================================================================
+   ANIMACIÓN: SPIN (ROTACIÓN CONTINUA)
+   ========================================================================== */
+/**
+ * Rotación infinita de 360 grados
+ * - Uso típico: iconos de carga (spinners)
+ * - Animación suave y continua
+ */
+@keyframes spin {
+  to {
+    transform: rotate(360deg); // Gira completamente
+  }
+}
+
+/* ==========================================================================
+   ANIMACIÓN: FILL BAR (LLENADO DE BARRA)
+   ========================================================================== */
+/**
+ * Animación para barras de progreso
+ * - Llena la barra desde 0 hasta el ancho definido
+ * - Usa CSS variable --skill-percent para el ancho final
+ */
+@keyframes fillBar {
+  from {
+    width: 0; // Empieza vacío
+  }
+  to {
+    width: var(--skill-percent); // Ancho definido por variable CSS
+  }
+}

@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#b01f2e" />
+  <title>Blog - FitLife</title>
+  <link rel="icon" href="assets/images/icon-fl.svg" />
+  <link rel="stylesheet" href="styles/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/images/icon-fl.svg" alt="FitLife Logo" class="logo-icon">
+          <h1>Fit<span>Life</span></h1>
+        </a>
+      </div>
+
+      <nav class="main-nav">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <ul class="menu">
+          <li class="menu-item"><a href="index.html">Inicio</a></li>
+          <li class="menu-item has-submenu">
+            <a href="clases.html">Clases</a>
+            <div class="mega-menu">
+              <div class="mega-menu-content">
+                <div class="mega-menu-column">
+                  <h3>Cardio</h3>
+                  <ul>
+                    <li><a href="clases.html#spinning">Spinning</a></li>
+                    <li><a href="clases.html#zumba">Zumba</a></li>
+                    <li><a href="clases.html#hiit">HIIT</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h3>Fuerza</h3>
+                  <ul>
+                    <li><a href="clases.html#crossfit">CrossFit</a></li>
+                    <li><a href="clases.html#funcional">Funcional</a></li>
+                    <li><a href="clases.html#musculacion">Musculación</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h3>Mente-Cuerpo</h3>
+                  <ul>
+                    <li><a href="clases.html#yoga">Yoga</a></li>
+                    <li><a href="clases.html#pilates">Pilates</a></li>
+                    <li><a href="clases.html#meditacion">Meditación</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="menu-item"><a href="entrenadores.html">Entrenadores</a></li>
+          <li class="menu-item"><a href="contacto.html">Contacto</a></li>
+          <li class="menu-item"><a href="precios.html">Precios</a></li>
+          <li class="menu-item"><a href="blog.html">Blog</a></li>
+          <li class="menu-item cta-button"><a href="contacto.html">Prueba Gratis</a></li>
+        </ul>
+      </nav>
+
+      <div class="theme-toggle">
+        <input type="checkbox" id="dark-mode-toggle" class="dark-mode-toggle">
+        <label for="dark-mode-toggle" class="dark-mode-label" aria-label="Cambiar a modo oscuro">
+          <i class="fas fa-sun sun-icon"></i>
+          <i class="fas fa-moon moon-icon"></i>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero blog-hero">
+    <video autoplay muted loop playsinline>
+      <source src="assets/videos/blog-hero.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="hero-content container">
+      <h1 class="hero-title">BLOG DE FITNESS</h1>
+      <p class="hero-subtitle">Consejos, noticias y artículos sobre fitness y bienestar</p>
+    </div>
+  </section>
+
+  <section class="blog-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Últimas Publicaciones</h2>
+        <p>Mantente al día con las últimas tendencias en fitness y bienestar</p>
+      </div>
+
+      <div class="scroll-container">
+        <div class="scroll-item">
+          <div class="blog-card-image">
+            <img src="assets/images/classes/crossfit.jpg" alt="Tendencias de fitness">
+          </div>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <div class="blog-card-meta-item">
+                <i class="far fa-calendar-alt"></i>
+                <span>15 Mar 2025</span>
+              </div>
+            </div>
+            <h3 class="blog-card-title">Tendencias de Fitness para 2025</h3>
+            <p class="blog-card-excerpt">Descubre las tendencias de fitness que dominarán este año y cómo incorporarlas
+              a tu rutina.</p>
+          </div>
+        </div>
+
+        <div class="scroll-item">
+          <div class="blog-card-image">
+            <img src="assets/images/blog/eathealthy.jpg" alt="Nutrición deportiva">
+          </div>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <div class="blog-card-meta-item">
+                <i class="far fa-calendar-alt"></i>
+                <span>10 Mar 2025</span>
+              </div>
+            </div>
+            <h3 class="blog-card-title">Guía de Nutrición Deportiva</h3>
+            <p class="blog-card-excerpt">Todo lo que necesitas saber sobre alimentación para optimizar tu rendimiento
+              deportivo.</p>
+          </div>
+        </div>
+
+        <div class="scroll-item">
+          <div class="blog-card-image">
+            <img src="assets/images/classes/yoga.jpg" alt="Yoga para principiantes">
+          </div>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <div class="blog-card-meta-item">
+                <i class="far fa-calendar-alt"></i>
+                <span>5 Mar 2025</span>
+              </div>
+            </div>
+            <h3 class="blog-card-title">Yoga para Principiantes</h3>
+            <p class="blog-card-excerpt">Aprende las posturas básicas y los beneficios del yoga para tu cuerpo y mente.
+            </p>
+          </div>
+        </div>
+
+        <div class="scroll-item">
+          <div class="blog-card-image">
+            <img src="assets/images/blog/home.jpg" alt="Entrenamiento en casa">
+          </div>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <div class="blog-card-meta-item">
+                <i class="far fa-calendar-alt"></i>
+                <span>1 Mar 2025</span>
+              </div>
+            </div>
+            <h3 class="blog-card-title">Entrenamiento Efectivo en Casa</h3>
+            <p class="blog-card-excerpt">Rutinas de ejercicio que puedes hacer en casa sin necesidad de equipamiento
+              especializado.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-container">
+        <div class="blog-main">
+          <article class="featured-post">
+            <div class="featured-post-image">
+              <img src="assets/images/classes/hiit.jpg" alt="Los beneficios del entrenamiento de fuerza">
+            </div>
+            <div class="featured-post-content">
+              <span class="featured-post-badge">Destacado</span>
+              <h2 class="featured-post-title">Los Beneficios del Entrenamiento de Fuerza para Todos</h2>
+              <p class="featured-post-excerpt">El entrenamiento de fuerza no es solo para culturistas. Descubre cómo
+                puede mejorar tu salud, aumentar tu metabolismo y prevenir lesiones, independientemente de tu edad o
+                nivel de condición física.</p>
+              <div class="featured-post-meta">
+                <div class="featured-post-author">
+                  <div class="featured-post-author-info">
+                    <div class="featured-post-author-name">Miguel Torres</div>
+                    <div class="featured-post-date">20 Mar 2025</div>
+                  </div>
+                </div>
+                <a href="#" class="blog-card-read-more">Leer más</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-image">
+              <img src="assets/images/blog/healthyfood.jpg" alt="Alimentación pre-entrenamiento">
+            </div>
+            <div class="blog-card-content">
+              <div class="blog-card-meta">
+                <div class="blog-card-meta-item">
+                  <i class="far fa-calendar-alt"></i>
+                  <span>18 Mar 2025</span>
+                </div>
+                <div class="blog-card-meta-item">
+                  <i class="far fa-eye"></i>
+                  <span>256</span>
+                </div>
+              </div>
+              <h3 class="blog-card-title">Qué Comer Antes de Entrenar: Guía Completa</h3>
+              <p class="blog-card-excerpt">Aprende qué alimentos consumir antes de tu entrenamiento para maximizar tu
+                energía y rendimiento.</p>
+              <div class="blog-card-tags">
+                <a href="#" class="blog-card-tag">Nutrición</a>
+                <a href="#" class="blog-card-tag">Rendimiento</a>
+              </div>
+              <div class="blog-card-footer">
+                <div class="blog-card-author">
+                </div>
+                <a href="#" class="blog-card-read-more">Leer más</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-image">
+              <img src="assets/images/blog/stretch.jpg" alt="Estiramientos post-entrenamiento">
+            </div>
+            <div class="blog-card-content">
+              <div class="blog-card-meta">
+                <div class="blog-card-meta-item">
+                  <i class="far fa-calendar-alt"></i>
+                  <span>15 Mar 2025</span>
+                </div>
+                <div class="blog-card-meta-item">
+                  <i class="far fa-eye"></i>
+                  <span>189</span>
+                </div>
+              </div>
+              <h3 class="blog-card-title">La Importancia de los Estiramientos Post-Entrenamiento</h3>
+              <p class="blog-card-excerpt">Descubre por qué los estiramientos después de entrenar son fundamentales para
+                tu recuperación y flexibilidad.</p>
+              <div class="blog-card-tags">
+                <a href="#" class="blog-card-tag">Recuperación</a>
+                <a href="#" class="blog-card-tag">Flexibilidad</a>
+              </div>
+              <div class="blog-card-footer">
+                <div class="blog-card-author">
+                  <div class="blog-card-author-name">Laura Martínez</div>
+                </div>
+                <a href="#" class="blog-card-read-more">Leer más</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-image">
+              <img src="assets/images/blog/meditation.jpg" alt="Meditación y fitness">
+            </div>
+            <div class="blog-card-content">
+              <div class="blog-card-meta">
+                <div class="blog-card-meta-item">
+                  <i class="far fa-calendar-alt"></i>
+                  <span>12 Mar 2025</span>
+                </div>
+                <div class="blog-card-meta-item">
+                  <i class="far fa-eye"></i>
+                  <span>210</span>
+                </div>
+              </div>
+              <h3 class="blog-card-title">Meditación y Fitness: La Combinación Perfecta</h3>
+              <p class="blog-card-excerpt">Cómo la meditación puede mejorar tu rendimiento físico y ayudarte a alcanzar
+                tus objetivos de fitness.</p>
+              <div class="blog-card-tags">
+                <a href="#" class="blog-card-tag">Meditación</a>
+                <a href="#" class="blog-card-tag">Mente-Cuerpo</a>
+              </div>
+              <div class="blog-card-footer">
+                <div class="blog-card-author">
+                  <div class="blog-card-author-name">Carlos Rodríguez</div>
+                </div>
+                <a href="#" class="blog-card-read-more">Leer más</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-image">
+              <img src="assets/images/blog/hidratation.jpg" alt="Hidratación durante el ejercicio">
+            </div>
+            <div class="blog-card-content">
+              <div class="blog-card-meta">
+                <div class="blog-card-meta-item">
+                  <i class="far fa-calendar-alt"></i>
+                  <span>10 Mar 2025</span>
+                </div>
+                <div class="blog-card-meta-item">
+                  <i class="far fa-eye"></i>
+                  <span>175</span>
+                </div>
+              </div>
+              <h3 class="blog-card-title">Guía de Hidratación Durante el Ejercicio</h3>
+              <p class="blog-card-excerpt">Todo lo que necesitas saber sobre cómo mantenerte correctamente hidratado
+                antes, durante y después del ejercicio.</p>
+              <div class="blog-card-tags">
+                <a href="#" class="blog-card-tag">Hidratación</a>
+                <a href="#" class="blog-card-tag">Rendimiento</a>
+              </div>
+              <div class="blog-card-footer">
+                <div class="blog-card-author">
+                  <div class="blog-card-author-name">Miguel Torres</div>
+                </div>
+                <a href="#" class="blog-card-read-more">Leer más</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-image">
+              <img src="assets/images/blog/hiit.jpg" alt="Entrenamiento HIIT">
+            </div>
+            <div class="blog-card-content">
+              <div class="blog-card-meta">
+                <div class="blog-card-meta-item">
+                  <i class="far fa-calendar-alt"></i>
+                  <span>5 Mar 2025</span>
+                </div>
+                <div class="blog-card-meta-item">
+                  <i class="far fa-eye"></i>
+                  <span>230</span>
+                </div>
+              </div>
+              <h3 class="blog-card-title">HIIT: Entrenamiento de Alta Intensidad por Intervalos</h3>
+              <p class="blog-card-excerpt">Descubre los beneficios del HIIT y cómo incorporarlo a tu rutina para
+                maximizar la quema de calorías en menos tiempo.</p>
+              <div class="blog-card-tags">
+                <a href="#" class="blog-card-tag">HIIT</a>
+                <a href="#" class="blog-card-tag">Cardio</a>
+              </div>
+              <div class="blog-card-footer">
+                <div class="blog-card-author">
+                  <div class="blog-card-author-name">Javier Méndez</div>
+                </div>
+                <a href="#" class="blog-card-read-more">Leer más</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <aside class="blog-sidebar">
+          <div class="sidebar-widget">
+            <h3 class="sidebar-widget-title">Buscar</h3>
+            <form class="search-form">
+              <input type="text" class="search-input" placeholder="Buscar artículos...">
+              <button type="submit" class="search-button">
+                <i class="fas fa-search"></i>
+              </button>
+            </form>
+          </div>
+
+          <div class="sidebar-widget">
+            <h3 class="sidebar-widget-title">Categorías</h3>
+            <ul class="categories-list">
+              <li><a href="#">Nutrición <span class="categories-count">12</span></a></li>
+              <li><a href="#">Entrenamiento <span class="categories-count">15</span></a></li>
+              <li><a href="#">Cardio <span class="categories-count">8</span></a></li>
+              <li><a href="#">Fuerza <span class="categories-count">10</span></a></li>
+              <li><a href="#">Mente-Cuerpo <span class="categories-count">7</span></a></li>
+              <li><a href="#">Recuperación <span class="categories-count">5</span></a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h3 class="sidebar-widget-title">Artículos Recientes</h3>
+            <div class="recent-posts">
+              <div class="recent-post">
+                <div class="recent-post-image">
+                  <img src="assets/images/classes/hiit.jpg" alt="Entrenamiento de fuerza">
+                </div>
+                <div class="recent-post-content">
+                  <h4 class="recent-post-title">Los Beneficios del Entrenamiento de Fuerza para Todos</h4>
+                  <div class="recent-post-date">20 Mar 2025</div>
+                </div>
+              </div>
+
+              <div class="recent-post">
+                <div class="recent-post-image">
+                  <img src="assets/images/blog/healthyfood.jpg" alt="Alimentación pre-entrenamiento">
+                </div>
+                <div class="recent-post-content">
+                  <h4 class="recent-post-title">Qué Comer Antes de Entrenar: Guía Completa</h4>
+                  <div class="recent-post-date">18 Mar 2025</div>
+                </div>
+              </div>
+
+              <div class="recent-post">
+                <div class="recent-post-image">
+                  <img src="assets/images/blog/stretch.jpg" alt="Estiramientos post-entrenamiento">
+                </div>
+                <div class="recent-post-content">
+                  <h4 class="recent-post-title">La Importancia de los Estiramientos Post-Entrenamiento</h4>
+                  <div class="recent-post-date">15 Mar 2025</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-widget">
+            <h3 class="sidebar-widget-title">Etiquetas</h3>
+            <div class="tags-cloud">
+              <a href="#" class="tag-item">Nutrición</a>
+              <a href="#" class="tag-item">Entrenamiento</a>
+              <a href="#" class="tag-item">Cardio</a>
+              <a href="#" class="tag-item">Fuerza</a>
+              <a href="#" class="tag-item">Yoga</a>
+              <a href="#" class="tag-item">Pilates</a>
+              <a href="#" class="tag-item">CrossFit</a>
+              <a href="#" class="tag-item">HIIT</a>
+              <a href="#" class="tag-item">Recuperación</a>
+              <a href="#" class="tag-item">Flexibilidad</a>
+              <a href="#" class="tag-item">Meditación</a>
+              <a href="#" class="tag-item">Bienestar</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="pagination">
+        <ul class="pagination-list">
+          <li><a href="#" class="pagination-item">1</a></li>
+          <li><a href="#" class="pagination-item active">2</a></li>
+          <li><a href="#" class="pagination-item">3</a></li>
+          <li><a href="#" class="pagination-item">4</a></li>
+          <li><a href="#" class="pagination-item">
+              <i class="fas fa-chevron-right"></i>
+            </a></li>
+        </ul>
+      </div>
+
+      <div class="blog-post-comments">
+        <div class="container">
+          <div class="section-header">
+            <h2>Comentarios</h2>
+            <p>Únete a la conversación y comparte tu opinión</p>
+          </div>
+
+          <div class="comments-container">
+            <div class="comment">
+              <div class="comment-avatar" data-initial="M"></div>
+              <div class="comment-content">
+                <div class="comment-header">
+                  <h4 class="comment-author">María García</h4>
+                  <span class="comment-date">Hace 2 días</span>
+                </div>
+                <div class="comment-body">
+                  <p>Excelente artículo sobre entrenamiento de fuerza. He estado siguiendo estos consejos durante las
+                    últimas semanas y ya noto una gran diferencia en mi rendimiento. ¡Gracias por compartir!</p>
+                </div>
+                <div class="comment-actions">
+                  <button class="comment-reply-btn">Responder</button>
+                  <div class="comment-reactions">
+                    <button class="reaction-btn" aria-label="Me gusta">
+                      <i class="far fa-thumbs-up"></i>
+                      <span>12</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="comment">
+              <div class="comment-avatar" data-initial="J"></div>
+              <div class="comment-content">
+                <div class="comment-header">
+                  <h4 class="comment-author">Javier Méndez</h4>
+                  <span class="comment-date">Hace 5 días</span>
+                </div>
+                <div class="comment-body">
+                  <p>Como entrenador de CrossFit, puedo confirmar que estos consejos son muy acertados. Especialmente el
+                    punto sobre la importancia de la técnica antes que el peso. Muchos principiantes cometen el error de
+                    querer levantar demasiado peso sin dominar primero la técnica correcta.</p>
+                </div>
+                <div class="comment-actions">
+                  <button class="comment-reply-btn">Responder</button>
+                  <div class="comment-reactions">
+                    <button class="reaction-btn" aria-label="Me gusta">
+                      <i class="far fa-thumbs-up"></i>
+                      <span>8</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Comentario anidado (respuesta) -->
+                <div class="comment nested-comment">
+                  <div class="comment-avatar" data-initial="A"></div>
+                  <div class="comment-content">
+                    <div class="comment-header">
+                      <h4 class="comment-author">Ana López</h4>
+                      <span class="comment-date">Hace 3 días</span>
+                    </div>
+                    <div class="comment-body">
+                      <p>Totalmente de acuerdo, Javier. En mis clases de yoga también enfatizo mucho la importancia de
+                        la técnica correcta para prevenir lesiones y maximizar los beneficios.</p>
+                    </div>
+                    <div class="comment-actions">
+                      <button class="comment-reply-btn">Responder</button>
+                      <div class="comment-reactions">
+                        <button class="reaction-btn" aria-label="Me gusta">
+                          <i class="far fa-thumbs-up"></i>
+                          <span>5</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="comment">
+              <div class="comment-avatar" data-initial="C"></div>
+              <div class="comment-content">
+                <div class="comment-header">
+                  <h4 class="comment-author">Carlos Rodríguez</h4>
+                  <span class="comment-date">Hace 1 semana</span>
+                </div>
+                <div class="comment-body">
+                  <p>Me gustaría ver más artículos sobre nutrición pre y post entrenamiento. Es un tema que complementa
+                    muy bien el entrenamiento de fuerza.</p>
+                </div>
+                <div class="comment-actions">
+                  <button class="comment-reply-btn">Responder</button>
+                  <div class="comment-reactions">
+                    <button class="reaction-btn" aria-label="Me gusta">
+                      <i class="far fa-thumbs-up"></i>
+                      <span>3</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulario para añadir comentarios -->
+          <div class="comment-form-container">
+            <h3>Deja tu comentario</h3>
+            <form class="comment-form">
+              <div class="form-group">
+                <label for="comment-name">Nombre</label>
+                <input type="text" id="comment-name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="comment-email">Email</label>
+                <input type="email" id="comment-email" name="email" required>
+              </div>
+              <div class="form-group full-width">
+                <label for="comment-text">Comentario</label>
+                <textarea id="comment-text" name="comment" rows="4" required></textarea>
+              </div>
+              <div class="form-group full-width">
+                <div class="checkbox-wrapper">
+                  <input type="checkbox" id="save-info" name="save-info" checked>
+                  <label for="save-info">
+                    Guardar mi nombre y email para la próxima vez
+                  </label>
+                </div>
+              </div>
+              <div class="form-submit">
+                <button type="submit" class="btn btn-primary">Publicar Comentario</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        </div>
+      </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="logo">
+            <h2>Fit<span>Life</span></h2>
+          </div>
+          <p>Transformando vidas a través del fitness y el bienestar desde 2013.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h3>Enlaces Rápidos</h3>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="clases.html">Clases</a></li>
+            <li><a href="entrenadores.html">Entrenadores</a></li>
+            <li><a href="precios.html">Precios</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>Contacto</h3>
+          <ul>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Av. Libertad 1234, Ciudad</span>
+            </li>
+            <li>
+              <i class="fas fa-phone"></i>
+              <span>(123) 456-7890</span>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <span>info@fitlife.com</span>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h3>Suscríbete a nuestro boletín</h3>
+          <p>Recibe noticias, consejos y promociones exclusivas.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Tu correo electrónico" required>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.952912260219!2d3.375295414770757!3d6.5276316452784755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMzEnMzkuNSJOIDPCsDIyJzMxLjEiRQ!5e0!3m2!1sen!2sng!4v1627913386325!5m2!1sen!2sng"
+          width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 FitLife. Todos los derechos reservados.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Política de Privacidad</a>
+          <a href="#">Términos y Condiciones</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" type="module"></script>
+</body>
+
+</html>

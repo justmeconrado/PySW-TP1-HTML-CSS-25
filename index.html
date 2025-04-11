@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#b01f2e" />
+  <title>FitLife - Tu gimnasio de confianza</title>
+  <link rel="icon" href="assets/images/icon-fl.svg" />
+  <link rel="stylesheet" href="styles/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/images/icon-fl.svg" alt="FitLife Logo" class="logo-icon" />
+          <h1>Fit<span>Life</span></h1>
+        </a>
+      </div>
+
+      <nav class="main-nav">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <ul class="menu">
+          <li class="menu-item has-submenu">
+            <a href="clases.html">Clases</a>
+            <div class="mega-menu">
+              <div class="mega-menu-content">
+                <div class="mega-menu-column">
+                  <h3>Cardio</h3>
+                  <ul>
+                    <li><a href="clases.html#spinning">Spinning</a></li>
+                    <li><a href="clases.html#zumba">Zumba</a></li>
+                    <li><a href="clases.html#hiit">HIIT</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h3>Fuerza</h3>
+                  <ul>
+                    <li><a href="clases.html#crossfit">CrossFit</a></li>
+                    <li><a href="clases.html#funcional">Funcional</a></li>
+                    <li><a href="clases.html#musculacion">Musculación</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h3>Mente-Cuerpo</h3>
+                  <ul>
+                    <li><a href="clases.html#yoga">Yoga</a></li>
+                    <li><a href="clases.html#pilates">Pilates</a></li>
+                    <li><a href="clases.html#meditacion">Meditación</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-image">
+                  <img src="assets/images/icon-fl.svg" alt="Clases en FitLife" />
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="menu-item">
+            <a href="entrenadores.html">Entrenadores</a>
+          </li>
+          <li class="menu-item"><a href="contacto.html">Contacto</a></li>
+          <li class="menu-item"><a href="precios.html">Precios</a></li>
+          <li class="menu-item"><a href="blog.html">Blog</a></li>
+          <li class="menu-item cta-button">
+            <a href="contacto.html">Prueba Gratis</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="theme-toggle">
+        <input type="checkbox" id="dark-mode-toggle" class="dark-mode-toggle" />
+        <label for="dark-mode-toggle" class="dark-mode-label" aria-label="Cambiar a modo oscuro">
+          <i class="fas fa-sun sun-icon"></i>
+          <i class="fas fa-moon moon-icon"></i>
+        </label>
+      </div>
+    </div>
+  </header>
+  <main class="main-content">
+    <section class="hero">
+      <video autoplay muted loop playsinline>
+        <source src="assets/videos/hero.mp4" type="video/mp4" />
+      </video>
+      <div class="overlay"></div>
+      <div class="hero-content container">
+        <h1 class="hero-title">
+          TRANSFORMA TU CUERPO<br />TRANSFORMA TU VIDA
+        </h1>
+        <p class="hero-subtitle">
+          Únete a FitLife y descubre tu mejor versión
+        </p>
+        <div class="hero-buttons">
+          <a href="precios.html" class="btn btn-primary">Ver Planes</a>
+          <a href="clases.html" class="btn btn-secondary">Explorar Clases</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <div class="section-header">
+          <h2>¿Por qué elegir FitLife?</h2>
+          <p>Descubre lo que nos hace diferentes</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-hand-sparkles fa-3x"></i>
+            </div>
+            <h3>Entrenadores Expertos</h3>
+            <p>
+              Nuestro equipo de profesionales certificados te guiará en cada
+              paso de tu entrenamiento.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="far fa-clock fa-3x"></i>
+            </div>
+            <h3>Horarios Flexibles</h3>
+            <p>
+              Abierto todos los días con horarios extendidos para adaptarnos a
+              tu rutina diaria.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-dumbbell fa-3x"></i>
+            </div>
+            <h3>Instalaciones Premium</h3>
+            <p>
+              Equipamiento de última generación en un espacio moderno y
+              confortable.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="classes">
+      <div class="container">
+        <div class="section-header">
+          <h2>Nuestras Clases</h2>
+          <p>Encuentra la actividad perfecta para ti</p>
+        </div>
+        <div class="classes-grid">
+          <div class="class-card">
+            <div class="class-image mask-image">
+              <img src="assets/images/classes/yoga.jpg" alt="Clase de Yoga" />
+              <div class="class-overlay">
+                <a href="clases.html#yoga" class="btn btn-outline">Ver Detalles</a>
+              </div>
+            </div>
+            <div class="class-content">
+              <h3>Yoga</h3>
+              <p>
+                Mejora tu flexibilidad y encuentra tu equilibrio interior.
+              </p>
+              <div class="class-meta">
+                <span class="class-duration">60 min</span>
+                <span class="class-level">Todos los niveles</span>
+              </div>
+            </div>
+          </div>
+          <div class="class-card">
+            <div class="class-image">
+              <img src="assets/images/classes/crossfit.jpg" alt="Clase de CrossFit" />
+              <div class="class-overlay">
+                <a href="clases.html#crossfit" class="btn btn-outline">Ver Detalles</a>
+              </div>
+            </div>
+            <div class="class-content">
+              <h3>CrossFit</h3>
+              <p>
+                Entrenamiento funcional de alta intensidad para mejorar tu
+                condición física.
+              </p>
+              <div class="class-meta">
+                <span class="class-duration">45 min</span>
+                <span class="class-level">Intermedio</span>
+              </div>
+            </div>
+          </div>
+          <div class="class-card">
+            <div class="class-image">
+              <img src="assets/images/classes/spinning.jpg" alt="Clase de Spinning" />
+              <div class="class-overlay">
+                <a href="clases.html#spinning" class="btn btn-outline">Ver Detalles</a>
+              </div>
+            </div>
+            <div class="class-content">
+              <h3>Spinning</h3>
+              <p>
+                Cardio intenso con música motivadora para quemar calorías.
+              </p>
+              <div class="class-meta">
+                <span class="class-duration">50 min</span>
+                <span class="class-level">Todos los niveles</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="classes-cta">
+          <a href="clases.html" class="btn btn-primary">Ver Todas las Clases</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number" data-count="500">0</div>
+            <div class="stat-label">Socios Activos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="30">0</div>
+            <div class="stat-label">Clases Semanales</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="15">0</div>
+            <div class="stat-label">Entrenadores Expertos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="10">0</div>
+            <div class="stat-label">Años de Experiencia</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <h2>Lo que dicen nuestros socios</h2>
+          <p>Experiencias reales de nuestra comunidad</p>
+        </div>
+        <div class="testimonial-carousel">
+          <input type="radio" name="testimonial" id="testimonial-1" checked />
+          <input type="radio" name="testimonial" id="testimonial-2" />
+          <input type="radio" name="testimonial" id="testimonial-3" />
+
+          <div class="testimonial-controls">
+            <label for="testimonial-1"></label>
+            <label for="testimonial-2"></label>
+            <label for="testimonial-3"></label>
+          </div>
+
+          <div class="testimonial-slides">
+            <div class="testimonial-slide">
+              <div class="testimonial-content">
+                <div class="testimonial-image">
+                  <img src="assets/images/home/testimonial-1.jpg" alt="María García" />
+                </div>
+                <div class="testimonial-text">
+                  <div class="testimonial-rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  </div>
+                  <p>
+                    "Desde que me uní a FitLife hace 6 meses, he perdido 15
+                    kilos y me siento con más energía que nunca. Los
+                    entrenadores son increíbles y la comunidad es muy
+                    motivadora."
+                  </p>
+                  <div class="testimonial-author">
+                    <h4>María García</h4>
+                    <span>Socia desde 2023</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide">
+              <div class="testimonial-content">
+                <div class="testimonial-image">
+                  <img src="assets/images/home/testimonial-2.jpg" alt="Carlos Rodríguez" />
+                </div>
+                <div class="testimonial-text">
+                  <div class="testimonial-rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  </div>
+                  <p>
+                    "Las clases de CrossFit son desafiantes pero muy
+                    divertidas. He mejorado mi resistencia y fuerza
+                    considerablemente. El ambiente es inmejorable y los
+                    entrenadores están siempre pendientes de tu técnica."
+                  </p>
+                  <div class="testimonial-author">
+                    <h4>Carlos Rodríguez</h4>
+                    <span>Socio desde 2022</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide">
+              <div class="testimonial-content">
+                <div class="testimonial-image">
+                  <img src="assets/images/home/testimonial-3.jpg" alt="Laura Martínez" />
+                </div>
+                <div class="testimonial-text">
+                  <div class="testimonial-rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  </div>
+                  <p>
+                    "Las clases de yoga me han ayudado a reducir el estrés y
+                    mejorar mi flexibilidad. El gimnasio tiene instalaciones
+                    modernas y limpias, y el personal es muy amable y
+                    profesional."
+                  </p>
+                  <div class="testimonial-author">
+                    <h4>Laura Martínez</h4>
+                    <span>Socia desde 2021</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trainers-preview">
+      <div class="container">
+        <div class="section-header">
+          <h2>Nuestros Entrenadores</h2>
+          <p>Profesionales certificados listos para guiarte</p>
+        </div>
+        <div class="trainers-grid">
+          <div class="trainer-card">
+            <div class="trainer-image clip-diamond">
+              <img src="assets/images/trainers/trainer-jm.jpg" alt="Entrenador Javier Méndez" />
+            </div>
+            <div class="trainer-info">
+              <h3>Javier Méndez</h3>
+              <p>Especialista en CrossFit</p>
+              <div class="trainer-social">
+                <a href="#" aria-label="Instagram de Javier">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" aria-label="Twitter de Javier">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="trainer-card">
+            <div class="trainer-image clip-circle">
+              <img src="assets/images/trainers/trainer-al.jpg" alt="Entrenadora Ana López" />
+            </div>
+            <div class="trainer-info">
+              <h3>Ana López</h3>
+              <p>Instructora de Yoga</p>
+              <div class="trainer-social">
+                <a href="#" aria-label="Instagram de Ana">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" aria-label="Twitter de Ana">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="trainer-card">
+            <div class="trainer-image clip-diamond">
+              <img src="assets/images/trainers/trainer-ml.jpg" alt="Entrenador Miguel Torres" />
+            </div>
+            <div class="trainer-info">
+              <h3>Miguel Torres</h3>
+              <p>Especialista en Nutrición</p>
+              <div class="trainer-social">
+                <a href="#" aria-label="Instagram de Miguel">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" aria-label="Twitter de Miguel">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="trainers-cta">
+          <a href="entrenadores.html" class="btn btn-primary">Conoce a Todos los Entrenadores</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>¿Listo para transformar tu vida?</h2>
+          <p>Únete hoy y obtén una semana de prueba gratuita</p>
+          <a href="contacto.html" class="btn btn-primary">Comenzar Ahora</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="logo">
+            <h2>Fit<span>Life</span></h2>
+          </div>
+          <p>
+            Transformando vidas a través del fitness y el bienestar desde
+            2013.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h3>Enlaces Rápidos</h3>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="clases.html">Clases</a></li>
+            <li><a href="entrenadores.html">Entrenadores</a></li>
+            <li><a href="precios.html">Precios</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>Contacto</h3>
+          <ul>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Av. Libertad 1234, Ciudad</span>
+            </li>
+            <li>
+              <i class="fas fa-phone"></i>
+              <span>(123) 456-7890</span>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <span>info@fitlife.com</span>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h3>Suscríbete a nuestro boletín</h3>
+          <p>Recibe noticias, consejos y promociones exclusivas.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Tu correo electrónico" required />
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-map">
+        <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.238389258939!2d-65.3058376849666!3d-24.18559038438163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f4e8bd5a9f9%3A0x3e8b5e1b899f4d3f!2sSan%20Salvador%20de%20Jujuy%2C%20Jujuy%2C%20Argentina!5e0!3m2!1sen!2sus!4v1627913386325!5m2!1sen!2sus"
+        width="100%" 
+        height="250" 
+        style="border:0" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 FitLife. Todos los derechos reservados.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Política de Privacidad</a>
+          <a href="#">Términos y Condiciones</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" type="module"></script>
+</body>
+
+</html>

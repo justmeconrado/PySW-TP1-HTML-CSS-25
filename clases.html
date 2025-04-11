@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#b01f2e" />
+  <title>Clases - FitLife</title>
+  <link rel="icon" href="assets/images/icon-fl.svg" type="image/x-icon" />
+  <link rel="stylesheet" href="styles/css/styles.css" />
+  <link rel="stylesheet" href="styles/css/dark-mode-fixes.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/images/icon-fl.svg" alt="FitLife Logo" class="logo-icon">
+          <h1>Fit<span>Life</span></h1>
+        </a>
+      </div>
+
+      <nav class="main-nav">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <ul class="menu">
+          <li class="menu-item"><a href="index.html">Inicio</a></li>
+          <li class="menu-item has-submenu">
+            <a href="clases.html">Clases</a>
+            <div class="mega-menu">
+              <div class="mega-menu-content">
+                <div class="mega-menu-column">
+                  <h3>Cardio</h3>
+                  <ul>
+                    <li><a href="#spinning">Spinning</a></li>
+                    <li><a href="#zumba">Zumba</a></li>
+                    <li><a href="#hiit">HIIT</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h3>Fuerza</h3>
+                  <ul>
+                    <li><a href="#crossfit">CrossFit</a></li>
+                    <li><a href="#funcional">Funcional</a></li>
+                    <li><a href="#musculacion">Musculación</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-column">
+                  <h3>Mente-Cuerpo</h3>
+                  <ul>
+                    <li><a href="#yoga">Yoga</a></li>
+                    <li><a href="#pilates">Pilates</a></li>
+                    <li><a href="#meditacion">Meditación</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="menu-item"><a href="entrenadores.html">Entrenadores</a></li>
+          <li class="menu-item"><a href="contacto.html">Contacto</a></li>
+          <li class="menu-item"><a href="precios.html">Precios</a></li>
+          <li class="menu-item"><a href="blog.html">Blog</a></li>
+          <li class="menu-item cta-button"><a href="contacto.html">Prueba Gratis</a></li>
+        </ul>
+      </nav>
+
+      <div class="theme-toggle">
+        <input type="checkbox" id="dark-mode-toggle" class="dark-mode-toggle">
+        <label for="dark-mode-toggle" class="dark-mode-label" aria-label="Cambiar a modo oscuro">
+          <i class="fas fa-sun sun-icon"></i>
+          <i class="fas fa-moon moon-icon"></i>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero classes-hero">
+    <video autoplay muted loop playsinline>
+      <source src="assets/videos/classes-hero.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="hero-content container">
+      <h2 class="hero-title">NUESTRAS CLASES</h2>
+      <p class="hero-subtitle">Descubre la variedad de actividades que tenemos para ti</p>
+    </div>
+  </section>
+
+
+  <section class="filter-container">
+    <div class="container">
+      <div class="section-header">
+        <h2>Explora Nuestras Clases</h2>
+        <p>Filtra por categoría para encontrar la clase perfecta para ti</p>
+      </div>
+
+      <div class="filter-controls">
+        <input type="radio" name="filter" id="filter-all" class="filter-control" checked data-filter="all">
+        <label for="filter-all" class="filter-label">Todas</label>
+
+        <input type="radio" name="filter" id="filter-cardio" class="filter-control" data-filter="cardio">
+        <label for="filter-cardio" class="filter-label">Cardio</label>
+
+        <input type="radio" name="filter" id="filter-fuerza" class="filter-control" data-filter="fuerza">
+        <label for="filter-fuerza" class="filter-label">Fuerza</label>
+
+        <input type="radio" name="filter" id="filter-mente" class="filter-control" data-filter="mente">
+        <label for="filter-mente" class="filter-label">Mente-Cuerpo</label>
+
+        <input type="radio" name="filter" id="filter-principiante" class="filter-control" data-filter="principiante">
+        <label for="filter-principiante" class="filter-label">Principiante</label>
+
+        <input type="radio" name="filter" id="filter-intermedio" class="filter-control" data-filter="intermedio">
+        <label for="filter-intermedio" class="filter-label">Intermedio</label>
+
+        <input type="radio" name="filter" id="filter-avanzado" class="filter-control" data-filter="avanzado">
+        <label for="filter-avanzado" class="filter-label">Avanzado</label>
+      </div>
+
+      <div class="classes-masonry">
+        <div class="class-item" data-category="mente principiante" id="yoga">
+          <div class="class-item-image">
+            <img src="assets/images/classes/yoga-v.jpg" alt="Clase de Yoga">
+          </div>
+          <div class="class-item-content">
+            <h3>Yoga</h3>
+            <p>Mejora tu flexibilidad y encuentra tu equilibrio interior con nuestras clases de yoga.</p>
+            <div class="class-item-meta">
+              <span class="class-item-duration">60 min</span>
+              <span class="class-item-level">Principiante</span>
+            </div>
+            <div class="class-item-tags">
+              <span class="class-item-tag">Mente-Cuerpo</span>
+              <span class="class-item-tag">Flexibilidad</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="class-item" data-category="fuerza intermedio avanzado" id="crossfit">
+          <div class="class-item-image">
+            <img src="assets/images/classes/crossfit-v.jpg" alt="Clase de CrossFit">
+          </div>
+          <div class="class-item-content">
+            <h3>CrossFit</h3>
+            <p>Entrenamiento funcional de alta intensidad para mejorar tu condición física general.</p>
+            <div class="class-item-meta">
+              <span class="class-item-duration">45 min</span>
+              <span class="class-item-level">Intermedio</span>
+            </div>
+            <div class="class-item-tags">
+              <span class="class-item-tag">Fuerza</span>
+              <span class="class-item-tag">Resistencia</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="class-item" data-category="cardio principiante intermedio" id="spinning">
+          <div class="class-item-image">
+            <img src="assets/images/classes/spinning.jpg" alt="Clase de Spinning">
+          </div>
+          <div class="class-item-content">
+            <h3>Spinning</h3>
+            <p>Cardio intenso con música motivadora para quemar calorías y mejorar tu resistencia.</p>
+            <div class="class-item-meta">
+              <span class="class-item-duration">50 min</span>
+              <span class="class-item-level">Todos los niveles</span>
+            </div>
+            <div class="class-item-tags">
+              <span class="class-item-tag">Cardio</span>
+              <span class="class-item-tag">Resistencia</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="class-item" data-category="mente principiante" id="pilates">
+          <div class="class-item-image">
+            <img src="assets/images/classes/pilates.jpg" alt="Clase de Pilates">
+          </div>
+          <div class="class-item-content">
+            <h3>Pilates</h3>
+            <p>Fortalece tu core y mejora tu postura con ejercicios controlados y precisos.</p>
+            <div class="class-item-meta">
+              <span class="class-item-duration">55 min</span>
+              <span class="class-item-level">Principiante</span>
+            </div>
+            <div class="class-item-tags">
+              <span class="class-item-tag">Mente-Cuerpo</span>
+              <span class="class-item-tag">Core</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="class-item" data-category="cardio intermedio avanzado" id="hiit">
+          <div class="class-item-image">
+            <img src="assets/images/classes/hiit.jpg" alt="Clase de HIIT">
+          </div>
+          <div class="class-item-content">
+            <h3>HIIT</h3>
+            <p>Entrenamiento por intervalos de alta intensidad para maximizar la quema de calorías.</p>
+            <div class="class-item-meta">
+              <span class="class-item-duration">30 min</span>
+              <span class="class-item-level">Intermedio-Avanzado</span>
+            </div>
+            <div class="class-item-tags">
+              <span class="class-item-tag">Cardio</span>
+              <span class="class-item-tag">Intensidad</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="class-item" data-category="fuerza principiante intermedio" id="funcional">
+          <div class="class-item-image">
+            <img src="assets/images/classes/funcional.jpg" alt="Clase de Entrenamiento Funcional">
+          </div>
+          <div class="class-item-content">
+            <h3>Entrenamiento Funcional</h3>
+            <p>Ejercicios que imitan los movimientos de la vida diaria para mejorar tu fuerza y movilidad.</p>
+            <div class="class-item-meta">
+              <span class="class-item-duration">45 min</span>
+              <span class="class-item-level">Todos los niveles</span>
+            </div>
+            <div class="class-item-tags">
+              <span class="class-item-tag">Fuerza</span>
+              <span class="class-item-tag">Funcional</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="class-item" data-category="cardio principiante" id="zumba">
+          <div class="class-item-image">
+            <img src="assets/images/classes/zumba.jpg" alt="Clase de Zumba">
+          </div>
+          <div class="class-item-content">
+            <h3>Zumba</h3>
+            <p>Divertida clase de baile con ritmos latinos para quemar calorías mientras te diviertes.</p>
+            <div class="class-item-meta">
+              <span class="class-item-duration">60 min</span>
+              <span class="class-item-level">Principiante</span>
+            </div>
+            <div class="class-item-tags">
+              <span class="class-item-tag">Cardio</span>
+              <span class="class-item-tag">Baile</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="class-item" data-category="fuerza intermedio avanzado" id="musculacion">
+          <div class="class-item-image">
+            <img src="assets/images/classes/musculacion.jpg" alt="Clase de Musculación">
+          </div>
+          <div class="class-item-content">
+            <h3>Musculación</h3>
+            <p>Entrenamiento con pesas para desarrollar masa muscular y aumentar la fuerza.</p>
+            <div class="class-item-meta">
+              <span class="class-item-duration">60 min</span>
+              <span class="class-item-level">Intermedio-Avanzado</span>
+            </div>
+            <div class="class-item-tags">
+              <span class="class-item-tag">Fuerza</span>
+              <span class="class-item-tag">Hipertrofia</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="class-item" data-category="mente principiante" id="meditacion">
+          <div class="class-item-image">
+            <img src="assets/images/classes/meditacion.jpg" alt="Clase de Meditación">
+          </div>
+          <div class="class-item-content">
+            <h3>Meditación</h3>
+            <p>Aprende técnicas de respiración y meditación para reducir el estrés y mejorar tu bienestar mental.</p>
+            <div class="class-item-meta">
+              <span class="class-item-duration">30 min</span>
+              <span class="class-item-level">Principiante</span>
+            </div>
+            <div class="class-item-tags">
+              <span class="class-item-tag">Mente-Cuerpo</span>
+              <span class="class-item-tag">Relajación</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="schedule-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Horario de Clases</h2>
+        <p>Planifica tu semana y no te pierdas ninguna clase</p>
+      </div>
+
+      <div class="schedule-table-container">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Hora</th>
+              <th>Lunes</th>
+              <th>Martes</th>
+              <th>Miércoles</th>
+              <th>Jueves</th>
+              <th>Viernes</th>
+              <th>Sábado</th>
+              <th>Domingo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>07:00</td>
+              <td>
+                <div class="schedule-class">CrossFit <i class="fas fa-fire-alt"></i></div>
+                <div class="schedule-time">07:00 - 07:45</div>
+                <div class="schedule-instructor">Javier</div>
+              </td>
+              <td>
+                <div class="schedule-class">HIIT <i class="fas fa-bolt"></i></div>
+                <div class="schedule-time">07:00 - 07:30</div>
+                <div class="schedule-instructor">Miguel</div>
+              </td>
+              <td>
+                <div class="schedule-class">CrossFit <i class="fas fa-fire-alt"></i></div>
+                <div class="schedule-time">07:00 - 07:45</div>
+                <div class="schedule-instructor">Javier</div>
+              </td>
+              <td>
+                <div class="schedule-class">HIIT <i class="fas fa-bolt"></i></div>
+                <div class="schedule-time">07:00 - 07:30</div>
+                <div class="schedule-instructor">Miguel</div>
+              </td>
+              <td>
+                <div class="schedule-class">CrossFit <i class="fas fa-fire-alt"></i></div>
+                <div class="schedule-time">07:00 - 07:45</div>
+                <div class="schedule-instructor">Javier</div>
+              </td>
+              <td>
+                <div class="schedule-class">Funcional</div>
+                <div class="schedule-time">07:00 - 07:45</div>
+                <div class="schedule-instructor">Laura</div>
+              </td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>09:00</td>
+              <td>
+                <div class="schedule-class">Yoga <i class="fas fa-spa"></i></div>
+                <div class="schedule-time">09:00 - 10:00</div>
+                <div class="schedule-instructor">Ana</div>
+              </td>
+              <td>
+                <div class="schedule-class">Pilates</div>
+                <div class="schedule-time">09:00 - 09:55</div>
+                <div class="schedule-instructor">Sofía</div>
+              </td>
+              <td>
+                <div class="schedule-class">Yoga <i class="fas fa-spa"></i></div>
+                <div class="schedule-time">09:00 - 10:00</div>
+                <div class="schedule-instructor">Ana</div>
+              </td>
+              <td>
+                <div class="schedule-class">Pilates</div>
+                <div class="schedule-time">09:00 - 09:55</div>
+                <div class="schedule-instructor">Sofía</div>
+              </td>
+              <td>
+                <div class="schedule-class">Yoga <i class="fas fa-spa"></i></div>
+                <div class="schedule-time">09:00 - 10:00</div>
+                <div class="schedule-instructor">Ana</div>
+              </td>
+              <td>
+                <div class="schedule-class">Yoga <i class="fas fa-spa"></i></div>
+                <div class="schedule-time">09:00 - 10:00</div>
+                <div class="schedule-instructor">Ana</div>
+              </td>
+              <td>
+                <div class="schedule-class">Meditación</div>
+                <div class="schedule-time">09:00 - 09:30</div>
+                <div class="schedule-instructor">Ana</div>
+              </td>
+            </tr>
+            <tr>
+              <td>12:00</td>
+              <td>
+                <div class="schedule-class">Funcional</div>
+                <div class="schedule-time">12:00 - 12:45</div>
+                <div class="schedule-instructor">Laura</div>
+              </td>
+              <td>
+                <div class="schedule-class">Spinning <i class="fas fa-bicycle"></i></div>
+                <div class="schedule-time">12:00 - 12:50</div>
+                <div class="schedule-instructor">Carlos</div>
+              </td>
+              <td>
+                <div class="schedule-class">Funcional</div>
+                <div class="schedule-time">12:00 - 12:45</div>
+                <div class="schedule-instructor">Laura</div>
+              </td>
+              <td>
+                <div class="schedule-class">Spinning <i class="fas fa-bicycle"></i></div>
+                <div class="schedule-time">12:00 - 12:50</div>
+                <div class="schedule-instructor">Carlos</div>
+              </td>
+              <td>
+                <div class="schedule-class">Funcional</div>
+                <div class="schedule-time">12:00 - 12:45</div>
+                <div class="schedule-instructor">Laura</div>
+              </td>
+              <td>
+                <div class="schedule-class">HIIT <i class="fas fa-bolt"></i></div>
+                <div class="schedule-time">12:00 - 12:30</div>
+                <div class="schedule-instructor">Miguel</div>
+              </td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>17:00</td>
+              <td>
+                <div class="schedule-class">Zumba <i class="fas fa-music"></i></div>
+                <div class="schedule-time">17:00 - 18:00</div>
+                <div class="schedule-instructor">María</div>
+              </td>
+              <td>
+                <div class="schedule-class">Musculación</div>
+                <div class="schedule-time">17:00 - 18:00</div>
+                <div class="schedule-instructor">Roberto</div>
+              </td>
+              <td>
+                <div class="schedule-class">Zumba <i class="fas fa-music"></i></div>
+                <div class="schedule-time">17:00 - 18:00</div>
+                <div class="schedule-instructor">María</div>
+              </td>
+              <td>
+                <div class="schedule-class">Musculación</div>
+                <div class="schedule-time">17:00 - 18:00</div>
+                <div class="schedule-instructor">Roberto</div>
+              </td>
+              <td>
+                <div class="schedule-class">Zumba <i class="fas fa-music"></i></div>
+                <div class="schedule-time">17:00 - 18:00</div>
+                <div class="schedule-instructor">María</div>
+              </td>
+              <td>
+                <div class="schedule-class">CrossFit <i class="fas fa-fire-alt"></i></div>
+                <div class="schedule-time">17:00 - 17:45</div>
+                <div class="schedule-instructor">Javier</div>
+              </td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>19:00</td>
+              <td>
+                <div class="schedule-class">CrossFit <i class="fas fa-fire-alt"></i></div>
+                <div class="schedule-time">19:00 - 19:45</div>
+                <div class="schedule-instructor">Javier</div>
+              </td>
+              <td>
+                <div class="schedule-class">Yoga <i class="fas fa-spa"></i></div>
+                <div class="schedule-time">19:00 - 20:00</div>
+                <div class="schedule-instructor">Ana</div>
+              </td>
+              <td>
+                <div class="schedule-class">CrossFit <i class="fas fa-fire-alt"></i></div>
+                <div class="schedule-time">19:00 - 19:45</div>
+                <div class="schedule-instructor">Javier</div>
+              </td>
+              <td>
+                <div class="schedule-class">Yoga <i class="fas fa-spa"></i></div>
+                <div class="schedule-time">19:00 - 20:00</div>
+                <div class="schedule-instructor">Ana</div>
+              </td>
+              <td>
+                <div class="schedule-class">HIIT <i class="fas fa-bolt"></i></div>
+                <div class="schedule-time">19:00 - 19:30</div>
+                <div class="schedule-instructor">Miguel</div>
+              </td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>¿Listo para probar una clase?</h2>
+        <p>Obtén una clase de prueba gratuita hoy mismo</p>
+        <a href="contacto.html" class="btn btn-primary">Reservar Ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="logo">
+            <h2>Fit<span>Life</span></h2>
+          </div>
+          <p>Transformando vidas a través del fitness y el bienestar desde 2013.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h3>Enlaces Rápidos</h3>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="clases.html">Clases</a></li>
+            <li><a href="entrenadores.html">Entrenadores</a></li>
+            <li><a href="precios.html">Precios</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>Contacto</h3>
+          <ul>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Av. Libertad 1234, Ciudad</span>
+            </li>
+            <li>
+              <i class="fas fa-phone"></i>
+              <span>(123) 456-7890</span>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <span>info@fitlife.com</span>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h3>Suscríbete a nuestro boletín</h3>
+          <p>Recibe noticias, consejos y promociones exclusivas.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Tu correo electrónico" required>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-map">
+        <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.238389258939!2d-65.3058376849666!3d-24.18559038438163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f4e8bd5a9f9%3A0x3e8b5e1b899f4d3f!2sSan%20Salvador%20de%20Jujuy%2C%20Jujuy%2C%20Argentina!5e0!3m2!1sen!2sus!4v1627913386325!5m2!1sen!2sus"
+        width="100%" 
+        height="250" 
+        style="border:0" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 FitLife. Todos los derechos reservados.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Política de Privacidad</a>
+          <a href="#">Términos y Condiciones</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" type="module"></script>
+
+</body>
+
+</html>
